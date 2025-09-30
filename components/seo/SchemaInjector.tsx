@@ -113,7 +113,7 @@ export function SchemaInjector({ type, data }: SchemaInjectorProps) {
             name: isArabic ? siteConfig.name : siteConfig.nameEn,
             logo: {
               '@type': 'ImageObject',
-              url: `${baseUrl}/images/logo.png`
+              url: `${baseUrl}/images/logo.jpg`
             }
           },
           datePublished: data?.publishedAt,

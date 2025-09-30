@@ -46,7 +46,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href={locale === 'ar' ? '/' : '/en'} className="flex items-center gap-3">
               <Image
-                src="/images/logo.png"
+                    src="/images/logo.jpg"
                 alt={siteConfig.name}
                 width={40}
                 height={40}
