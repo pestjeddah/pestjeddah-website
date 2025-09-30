@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { Inter, Tajawal } from 'next/font/google';
 
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -10,6 +11,19 @@ import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat';
 import { TopBar } from '@/components/layout/TopBar';
 import { isRTL, generateHreflang } from '@/lib/utils';
 import { siteConfig } from '@/app/config/site';
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const tajawal = Tajawal({ 
+  subsets: ['arabic'],
+  weight: ['300', '400', '500', '700', '900'],
+  variable: '--font-tajawal',
+  display: 'swap',
+});
 
 type Props = {
   children: ReactNode;
@@ -62,7 +76,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={isRTL(locale) ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={isRTL(locale) ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <head>
         <link
           rel="alternate"
@@ -80,7 +94,7 @@ export default async function LocaleLayout({
           href="https://pestjeddah.com/"
         />
       </head>
-      <body className={isRTL(locale) ? 'arabic-text' : ''}>
+      <body className={`${inter.variable} ${tajawal.variable} antialiased ${isRTL(locale) ? 'arabic-text' : ''}`}>
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen flex flex-col">
             <TopBar />

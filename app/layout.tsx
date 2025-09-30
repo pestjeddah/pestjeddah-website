@@ -66,13 +66,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html suppressHydrationWarning>
-      <body className={`${inter.variable} ${tajawal.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }
 
 
