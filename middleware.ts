@@ -4,10 +4,13 @@ export default createMiddleware({
   // A list of all locales that are supported
   locales: ['ar', 'en'],
 
-  // Used when no locale matches
+  // Used when no locale matches - ALWAYS default to Arabic
   defaultLocale: 'ar',
   
-  // Only use prefix for non-default locale
+  // Disable locale detection to always default to Arabic
+  localeDetection: false,
+  
+  // Only use prefix for English (/en), Arabic has no prefix
   localePrefix: {
     mode: 'as-needed',
     prefixes: {
