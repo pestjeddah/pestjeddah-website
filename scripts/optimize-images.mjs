@@ -3,8 +3,8 @@ import { readdir, mkdir, stat } from 'fs/promises';
 import { join } from 'path';
 import { existsSync } from 'fs';
 
-const INPUT_DIR = 'Public/images';
-const TEMP_DIR = 'Public/images-optimized';
+const INPUT_DIR = 'public/images';
+const TEMP_DIR = 'public/images-optimized';
 
 async function optimizeImages() {
   console.log('🖼️  Starting image optimization...\n');
