@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { usePathname as useNextPathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, Globe } from 'lucide-react';
@@ -14,7 +14,8 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations('common');
   const locale = useLocale();
-  const pathname = useNextPathname();
+  const pathname = usePathname();
+  const router = useRouter();
   const rtl = isRTL(locale);
 
   const navigation = [
@@ -31,13 +32,21 @@ export function Header() {
   
   // Get the language switch path
   const switchLocalePath = () => {
-    if (locale === 'ar') {
-      // Switching from Arabic to English: add /en prefix
-      return pathname === '/' ? '/en' : `/en${pathname}`;
-    } else {
-      // Switching from English to Arabic: remove /en prefix
-      return pathname === '/en' ? '/' : pathname.replace(/^\/en/, '');
+    // Get current path without locale prefix
+    let currentPath = pathname;
+    
+    // Remove /en prefix if exists
+    if (currentPath.startsWith('/en')) {
+      currentPath = currentPath.substring(3) || '/';
     }
+    
+    // For switching TO English, add /en prefix
+    if (otherLocale === 'en') {
+      return currentPath === '/' ? '/en' : `/en${currentPath}`;
+    }
+    
+    // For switching TO Arabic, use path without prefix
+    return currentPath;
   };
 
   return (
