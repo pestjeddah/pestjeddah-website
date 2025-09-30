@@ -1,0 +1,177 @@
+{
+  "common": {
+    "phone": "Call Now",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Business Hours",
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "getQuote": "Get Quote",
+    "callNow": "Call Now",
+    "available247": "Available 24/7",
+    "freeInspection": "Free Inspection",
+    "licensed": "Licensed",
+    "insured": "Insured",
+    "guarantee": "Guarantee",
+    "emergency": "Emergency",
+    "home": "Home",
+    "services": "Services",
+    "sectors": "Sectors",
+    "areas": "Areas",
+    "offers": "Offers & Contracts",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Pest Control Company in Jeddah — Immediate Service 24/7",
+    "subtitle": "Al-Ustora Company - Licensed pest control with guaranteed service for all types of insects and rodents",
+    "cta": "Get Immediate Service",
+    "ctaSecondary": "Free Inspection",
+    "trustBadges": {
+      "licensed": "Licensed by Jeddah Municipality",
+      "experienced": "10+ Years Experience",
+      "available": "Available 24/7",
+      "guarantee": "Full Guarantee"
+    }
+  },
+  "services": {
+    "title": "Our Specialized Services",
+    "subtitle": "Comprehensive solutions for controlling all types of insects and rodents with latest technologies",
+    "cockroaches": {
+      "title": "Cockroach Control",
+      "description": "Complete elimination of cockroaches with complete safety"
+    },
+    "bedbugs": {
+      "title": "Bed Bug Treatment",
+      "description": "Effective bed bug treatment with no-return guarantee"
+    },
+    "termites": {
+      "title": "Termite Control",
+      "description": "Comprehensive building protection from termites"
+    },
+    "ants": {
+      "title": "Ant Control",
+      "description": "Advanced solutions to eliminate all types of ants"
+    },
+    "rodents": {
+      "title": "Rodent Control",
+      "description": "Safe elimination of mice and rats"
+    },
+    "mosquitoes": {
+      "title": "Mosquito & Fly Control",
+      "description": "Protection from mosquitoes and flies with modern techniques"
+    },
+    "fumigation": {
+      "title": "Fumigation & Disinfection",
+      "description": "Comprehensive fumigation and disinfection for buildings and warehouses"
+    },
+    "contracts": {
+      "title": "Annual Contracts",
+      "description": "Annual prevention contracts with regular scheduled visits"
+    }
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Scientific methodology designed to ensure the best results",
+    "steps": [
+      {
+        "title": "Inspection & Diagnosis",
+        "description": "Comprehensive inspection to identify pest type and infestation level"
+      },
+      {
+        "title": "Plan Development",
+        "description": "Design customized treatment plan based on problem type"
+      },
+      {
+        "title": "Implementation",
+        "description": "Apply treatment using latest techniques and safe materials"
+      },
+      {
+        "title": "Follow-up",
+        "description": "Follow-up visits to ensure treatment success and prevent recurrence"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "subtitle": "Real customer opinions about our services",
+    "reviews": [
+      {
+        "name": "Ahmed Mohammed",
+        "area": "Al Hamra District",
+        "text": "Excellent and fast service, completely eliminated the cockroach problem",
+        "rating": 5
+      },
+      {
+        "name": "Fatima Ahmed",
+        "area": "Al Shati District", 
+        "text": "Professional and cooperative team, I recommend dealing with them",
+        "rating": 5
+      },
+      {
+        "name": "Mohammed Abdullah",
+        "area": "Al Rawdah District",
+        "text": "Reasonable prices and real guarantee on service",
+        "rating": 5
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most important questions about our services",
+    "questions": [
+      {
+        "question": "Are the pesticides used safe?",
+        "answer": "Yes, we use licensed pesticides that are safe for public health and the environment, following the highest safety standards."
+      },
+      {
+        "question": "How long does the pest control process take?",
+        "answer": "Duration varies according to pest type and infestation level, usually from 1 to 3 hours for regular homes."
+      },
+      {
+        "question": "Is there a guarantee on the service?",
+        "answer": "Yes, we provide comprehensive guarantee on all our services with possibility of free return if the problem recurs."
+      },
+      {
+        "question": "Do you provide emergency service?",
+        "answer": "Yes, we are available 24 hours for emergency cases throughout Jeddah."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Al-Ustora Company - Leading in pest control field in Jeddah. Reliable and guaranteed service around the clock.",
+    "quickLinks": "Quick Links",
+    "serviceAreas": "Service Areas",
+    "contactInfo": "Contact Information",
+    "businessHours": "Business Hours",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 Al-Ustora Company. All rights reserved."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get free consultation and instant quote",
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "area": "Area",
+      "pestType": "Problem Type",
+      "message": "Additional Details",
+      "file": "Attach Image (Optional)",
+      "submit": "Send Request",
+      "success": "Your request has been sent successfully, we will contact you soon"
+    },
+    "pestTypes": {
+      "cockroaches": "Cockroaches",
+      "bedbugs": "Bed Bugs",
+      "termites": "Termites", 
+      "ants": "Ants",
+      "rodents": "Rodents",
+      "mosquitoes": "Mosquitoes & Flies",
+      "other": "Other"
+    }
+  }
+}
+
+
+
