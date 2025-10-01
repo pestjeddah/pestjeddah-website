@@ -32,9 +32,6 @@ export function Header() {
   
   // Get the language switch path
   const switchLocalePath = () => {
-    // pathname from usePathname() doesn't include locale prefix
-    // So we need to add it based on current and target locale
-    
     // If currently in Arabic and switching to English
     if (locale === 'ar' && otherLocale === 'en') {
       return pathname === '/' ? '/en' : `/en${pathname}`;
@@ -42,6 +39,11 @@ export function Header() {
     
     // If currently in English and switching to Arabic
     if (locale === 'en' && otherLocale === 'ar') {
+      // Remove /en prefix to get Arabic path
+      if (pathname.startsWith('/en')) {
+        const arabicPath = pathname.replace(/^\/en/, '');
+        return arabicPath === '' ? '/' : arabicPath;
+      }
       return pathname;
     }
     
