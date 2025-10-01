@@ -486,3 +486,5 @@ export default function BlogPost6({ params: { locale } }: Props) {
     </>
   );
 }
+
+

@@ -1,4 +1,6 @@
-import { useTranslations } from 'next-intl';
+'use client';
+
+import { useState, useMemo } from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,9 +9,9 @@ import {
   User, 
   ArrowRight,
   ArrowLeft,
-  Tag,
   Clock,
-  Eye
+  Eye,
+  Search
 } from 'lucide-react';
 
 import { isRTL } from '@/lib/utils';
@@ -19,36 +21,19 @@ type Props = {
   params: { locale: string };
 };
 
-export async function generateMetadata({
-  params: { locale }
-}: Props): Promise<Metadata> {
-  const isArabic = locale === 'ar';
-  
-  return {
-    title: isArabic 
-      ? 'مدونة مكافحة الحشرات — شركة الأسطورة | نصائح وإرشادات مكافحة الآفات'
-      : 'Pest Control Blog — Al-Ustora | Tips & Guidance for Pest Management',
-    description: isArabic
-      ? 'مدونة شركة الأسطورة لمكافحة الحشرات بجدة. نصائح متخصصة، إرشادات الوقاية، وأحدث طرق مكافحة الآفات والحشرات المنزلية.'
-      : 'Al-Ustora pest control blog in Jeddah. Specialized tips, prevention guidance, and latest methods for pest and household insect control.',
-    keywords: isArabic 
-      ? ['مدونة مكافحة الحشرات', 'نصائح مكافحة الآفات', 'الوقاية من الحشرات', 'إرشادات الصحة العامة']
-      : ['pest control blog', 'pest management tips', 'insect prevention', 'public health guidance'],
-  };
-}
-
 export default function BlogPage({ params: { locale } }: Props) {
   const isArabic = locale === 'ar';
   const rtl = isRTL(locale);
+  
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(isArabic ? 'جميع المقالات' : 'All Articles');
 
-  // Sample blog posts data
-  const blogPosts = [
+  // All 15 blog posts data
+  const allBlogPosts = [
     {
       id: 1,
       title: isArabic ? 'طرق الوقاية من الصراصير في المطبخ' : 'Kitchen Cockroach Prevention Methods',
-      excerpt: isArabic 
-        ? 'تعرف على أفضل الطرق لمنع دخول الصراصير إلى مطبخك والحفاظ على نظافة المكان'
-        : 'Learn the best methods to prevent cockroaches from entering your kitchen and maintaining cleanliness',
+      excerpt: isArabic ? 'تعرف على أفضل الطرق لمنع دخول الصراصير إلى مطبخك والحفاظ على نظافة المكان' : 'Learn the best methods to prevent cockroaches from entering your kitchen and maintaining cleanliness',
       image: '/images/Cockroach control Jeddah.jpg',
       category: isArabic ? 'نصائح وقائية' : 'Prevention Tips',
       date: isArabic ? '15 سبتمبر 2024' : 'September 15, 2024',
@@ -59,9 +44,7 @@ export default function BlogPage({ params: { locale } }: Props) {
     {
       id: 2,
       title: isArabic ? 'علامات وجود النمل الأبيض في منزلك' : 'Signs of Termites in Your Home',
-      excerpt: isArabic 
-        ? 'كيف تكتشف وجود النمل الأبيض في منزلك قبل أن يسبب أضراراً جسيمة'
-        : 'How to detect termites in your home before they cause serious damage',
+      excerpt: isArabic ? 'كيف تكتشف وجود النمل الأبيض في منزلك قبل أن يسبب أضراراً جسيمة' : 'How to detect termites in your home before they cause serious damage',
       image: '/images/Termite treatment Jeddah.jpg',
       category: isArabic ? 'التشخيص' : 'Diagnosis',
       date: isArabic ? '12 سبتمبر 2024' : 'September 12, 2024',
@@ -72,9 +55,7 @@ export default function BlogPage({ params: { locale } }: Props) {
     {
       id: 3,
       title: isArabic ? 'أفضل أوقات مكافحة البعوض في جدة' : 'Best Times for Mosquito Control in Jeddah',
-      excerpt: isArabic 
-        ? 'تعرف على المواسم والأوقات المثلى لمكافحة البعوض بفعالية في مناخ جدة'
-        : 'Learn about the optimal seasons and times for effective mosquito control in Jeddah\'s climate',
+      excerpt: isArabic ? 'تعرف على المواسم والأوقات المثلى لمكافحة البعوض بفعالية في مناخ جدة' : 'Learn about the optimal seasons and times for effective mosquito control in Jeddah\'s climate',
       image: '/images/Mosquito control service.jpg',
       category: isArabic ? 'مكافحة موسمية' : 'Seasonal Control',
       date: isArabic ? '8 سبتمبر 2024' : 'September 8, 2024',
@@ -85,9 +66,7 @@ export default function BlogPage({ params: { locale } }: Props) {
     {
       id: 4,
       title: isArabic ? 'كيفية علاج بق الفراش نهائياً' : 'How to Eliminate Bed Bugs Permanently',
-      excerpt: isArabic 
-        ? 'دليل شامل للتخلص من بق الفراش نهائياً وضمان عدم عودته مرة أخرى'
-        : 'Comprehensive guide to permanently eliminate bed bugs and ensure they don\'t return',
+      excerpt: isArabic ? 'دليل شامل للتخلص من بق الفراش نهائياً وضمان عدم عودته مرة أخرى' : 'Comprehensive guide to permanently eliminate bed bugs and ensure they don\'t return',
       image: '/images/Bed bug treatment Jeddah.jpg',
       category: isArabic ? 'علاج متخصص' : 'Specialized Treatment',
       date: isArabic ? '5 سبتمبر 2024' : 'September 5, 2024',
@@ -98,9 +77,7 @@ export default function BlogPage({ params: { locale } }: Props) {
     {
       id: 5,
       title: isArabic ? 'أهمية التعقيم الدوري للمطاعم' : 'Importance of Regular Restaurant Disinfection',
-      excerpt: isArabic 
-        ? 'لماذا يجب على المطاعم الالتزام بجدول تعقيم دوري وما هي أفضل الممارسات'
-        : 'Why restaurants should follow regular disinfection schedules and best practices',
+      excerpt: isArabic ? 'لماذا يجب على المطاعم الالتزام بجدول تعقيم دوري وما هي أفضل الممارسات' : 'Why restaurants should follow regular disinfection schedules and best practices',
       image: '/images/Pest control for restaurants.jpg',
       category: isArabic ? 'قطاع تجاري' : 'Commercial Sector',
       date: isArabic ? '1 سبتمبر 2024' : 'September 1, 2024',
@@ -111,15 +88,112 @@ export default function BlogPage({ params: { locale } }: Props) {
     {
       id: 6,
       title: isArabic ? 'التدخين والتعقيم: متى نحتاجهما؟' : 'Fumigation & Disinfection: When Do We Need Them?',
-      excerpt: isArabic 
-        ? 'الفرق بين التدخين والتعقيم ومتى نحتاج لكل منهما في مكافحة الآفات'
-        : 'The difference between fumigation and disinfection and when we need each in pest control',
+      excerpt: isArabic ? 'الفرق بين التدخين والتعقيم ومتى نحتاج لكل منهما في مكافحة الآفات' : 'The difference between fumigation and disinfection and when we need each in pest control',
       image: '/images/Pest spray service.jpg',
       category: isArabic ? 'تقنيات متقدمة' : 'Advanced Techniques',
       date: isArabic ? '28 أغسطس 2024' : 'August 28, 2024',
       author: isArabic ? 'م. خالد السلمي' : 'Eng. Khalid Al-Salmi',
       readTime: isArabic ? '9 دقائق' : '9 min read',
       views: '980'
+    },
+    {
+      id: 7,
+      title: isArabic ? 'مكافحة القوارض في المنازل' : 'Rodent Control in Homes',
+      excerpt: isArabic ? 'دليل شامل لمكافحة الفئران والجرذان في المنازل والوقاية منها' : 'Comprehensive guide for mice and rat control in homes and prevention',
+      image: '/images/Rodent control Jeddah.jpg',
+      category: isArabic ? 'علاج متخصص' : 'Specialized Treatment',
+      date: isArabic ? '20 أغسطس 2024' : 'August 20, 2024',
+      author: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team',
+      readTime: isArabic ? '7 دقائق' : '7 min read',
+      views: '1.4K'
+    },
+    {
+      id: 8,
+      title: isArabic ? 'النمل الأسود: كيف تتخلص منه نهائياً؟' : 'Black Ants: How to Get Rid of Them Permanently?',
+      excerpt: isArabic ? 'طرق فعالة للتخلص من النمل الأسود في المنزل والحديقة بشكل نهائي' : 'Effective methods to eliminate black ants in home and garden permanently',
+      image: '/images/Ant control Jeddah.jpg',
+      category: isArabic ? 'نصائح وقائية' : 'Prevention Tips',
+      date: isArabic ? '10 أغسطس 2024' : 'August 10, 2024',
+      author: isArabic ? 'م. سارة الزهراني' : 'Eng. Sarah Al-Zahrani',
+      readTime: isArabic ? '6 دقائق' : '6 min read',
+      views: '1.1K'
+    },
+    {
+      id: 9,
+      title: isArabic ? 'علامات تحتاج معها لمكافحة فورية' : 'Signs You Need Immediate Pest Control',
+      excerpt: isArabic ? 'تعرف على العلامات التحذيرية التي تستدعي الاتصال بشركة مكافحة فوراً' : 'Learn warning signs that require immediate call to pest control company',
+      image: '/images/Emergency pest control Jeddah.jpg',
+      category: isArabic ? 'التشخيص' : 'Diagnosis',
+      date: isArabic ? '25 يوليو 2024' : 'July 25, 2024',
+      author: isArabic ? 'د. أحمد العمراني' : 'Dr. Ahmed Al-Omrani',
+      readTime: isArabic ? '8 دقائق' : '8 min read',
+      views: '1.8K'
+    },
+    {
+      id: 10,
+      title: isArabic ? 'مكافحة الآفات في الفنادق: دليل شامل' : 'Pest Control in Hotels: Comprehensive Guide',
+      excerpt: isArabic ? 'برامج مكافحة متخصصة للفنادق تضمن سلامة النزلاء والحفاظ على السمعة' : 'Specialized pest control programs for hotels ensuring guest safety and reputation protection',
+      image: '/images/Commercial pest control Jeddah.jpg',
+      category: isArabic ? 'قطاع تجاري' : 'Commercial Sector',
+      date: isArabic ? '15 يوليو 2024' : 'July 15, 2024',
+      author: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi',
+      readTime: isArabic ? '9 دقائق' : '9 min read',
+      views: '920'
+    },
+    {
+      id: 11,
+      title: isArabic ? 'الحشرات الطائرة وطرق مكافحتها' : 'Flying Insects and Control Methods',
+      excerpt: isArabic ? 'دليل شامل لمكافحة الذباب والبعوض والحشرات الطائرة الأخرى' : 'Comprehensive guide for controlling flies, mosquitoes and other flying insects',
+      image: '/images/Insect control Jeddah.jpg',
+      category: isArabic ? 'مكافحة موسمية' : 'Seasonal Control',
+      date: isArabic ? '5 يوليو 2024' : 'July 5, 2024',
+      author: isArabic ? 'م. خالد السلمي' : 'Eng. Khalid Al-Salmi',
+      readTime: isArabic ? '7 دقائق' : '7 min read',
+      views: '1.3K'
+    },
+    {
+      id: 12,
+      title: isArabic ? 'الوقاية من الآفات في فصل الشتاء' : 'Winter Pest Prevention',
+      excerpt: isArabic ? 'كيف تحمي منزلك من الآفات التي تبحث عن مأوى دافئ في الشتاء' : 'How to protect your home from pests seeking warm shelter in winter',
+      image: '/images/Home pest treatment.jpg',
+      category: isArabic ? 'مكافحة موسمية' : 'Seasonal Control',
+      date: isArabic ? '20 يونيو 2024' : 'June 20, 2024',
+      author: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team',
+      readTime: isArabic ? '6 دقائق' : '6 min read',
+      views: '850'
+    },
+    {
+      id: 13,
+      title: isArabic ? 'المبيدات الآمنة للأطفال والحيوانات الأليفة' : 'Safe Pesticides for Children and Pets',
+      excerpt: isArabic ? 'تعرف على المبيدات الآمنة والطرق الصديقة للبيئة لمكافحة الآفات' : 'Learn about safe pesticides and eco-friendly methods for pest control',
+      image: '/images/Safe pest control.jpg',
+      category: isArabic ? 'تقنيات متقدمة' : 'Advanced Techniques',
+      date: isArabic ? '10 يونيو 2024' : 'June 10, 2024',
+      author: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi',
+      readTime: isArabic ? '10 دقائق' : '10 min read',
+      views: '1.6K'
+    },
+    {
+      id: 14,
+      title: isArabic ? 'مكافحة الآفات الزراعية في الحدائق المنزلية' : 'Agricultural Pest Control in Home Gardens',
+      excerpt: isArabic ? 'حماية محاصيلك وحديقتك من الآفات الزراعية بطرق فعالة وآمنة' : 'Protect your crops and garden from agricultural pests with effective and safe methods',
+      image: '/images/Eco-friendly pest control.jpg',
+      category: isArabic ? 'نصائح وقائية' : 'Prevention Tips',
+      date: isArabic ? '25 مايو 2024' : 'May 25, 2024',
+      author: isArabic ? 'م. سارة الزهراني' : 'Eng. Sarah Al-Zahrani',
+      readTime: isArabic ? '8 دقائق' : '8 min read',
+      views: '720'
+    },
+    {
+      id: 15,
+      title: isArabic ? 'كيف تختار شركة مكافحة حشرات موثوقة؟' : 'How to Choose Reliable Pest Control Company?',
+      excerpt: isArabic ? 'معايير أساسية لاختيار شركة مكافحة حشرات محترفة وموثوقة' : 'Essential criteria for choosing professional and reliable pest control company',
+      image: '/images/Professional pest control.jpg',
+      category: isArabic ? 'التشخيص' : 'Diagnosis',
+      date: isArabic ? '10 مايو 2024' : 'May 10, 2024',
+      author: isArabic ? 'د. أحمد العمراني' : 'Dr. Ahmed Al-Omrani',
+      readTime: isArabic ? '10 دقائق' : '10 min read',
+      views: '2.3K'
     }
   ];
 
@@ -140,6 +214,28 @@ export default function BlogPage({ params: { locale } }: Props) {
     'Commercial Sector',
     'Advanced Techniques'
   ];
+
+  // Filter posts based on search and category
+  const filteredPosts = useMemo(() => {
+    let filtered = allBlogPosts;
+
+    // Filter by category
+    if (selectedCategory !== (isArabic ? 'جميع المقالات' : 'All Articles')) {
+      filtered = filtered.filter(post => post.category === selectedCategory);
+    }
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(post => 
+        post.title.toLowerCase().includes(query) ||
+        post.excerpt.toLowerCase().includes(query) ||
+        post.author.toLowerCase().includes(query)
+      );
+    }
+
+    return filtered;
+  }, [searchQuery, selectedCategory, isArabic]);
 
   return (
     <>
@@ -174,12 +270,12 @@ export default function BlogPage({ params: { locale } }: Props) {
               <input
                 type="text"
                 placeholder={isArabic ? 'ابحث في المقالات...' : 'Search articles...'}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               />
               <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+                <Search className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -187,14 +283,15 @@ export default function BlogPage({ params: { locale } }: Props) {
       </section>
 
       {/* Categories */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-8 bg-white border-b sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((category, index) => (
               <button
                 key={index}
+                onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  index === 0 
+                  selectedCategory === category
                     ? 'bg-primary text-white' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
@@ -209,83 +306,84 @@ export default function BlogPage({ params: { locale } }: Props) {
       {/* Blog Posts Grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="relative">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={400}
-                    height={250}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
-                    <div className="flex items-center gap-1">
-                      <Calendar size={14} />
-                      <span>{post.date}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock size={14} />
-                      <span>{post.readTime}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Eye size={14} />
-                      <span>{post.views}</span>
-                    </div>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2">
-                    {post.title}
-                  </h3>
-
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <User size={16} className="text-gray-400" />
-                      <span className="text-xs text-gray-600">{post.author}</span>
-                    </div>
-
-                    <Link
-                      href={`${locale === 'ar' ? '/blog' : '/en/blog'}/${post.id}`}
-                      className="flex items-center gap-2 text-primary hover:text-primary/80 text-sm font-semibold"
-                    >
-                      {isArabic ? 'اقرأ المزيد' : 'Read More'}
-                      {rtl ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {/* Pagination */}
-          <div className="flex justify-center mt-12">
-            <div className="flex items-center gap-2">
-              <button className="px-4 py-2 text-gray-500 hover:text-primary">
-                {rtl ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
-              </button>
-              <button className="px-4 py-2 bg-primary text-white rounded-lg">1</button>
-              <button className="px-4 py-2 text-gray-700 hover:text-primary">2</button>
-              <button className="px-4 py-2 text-gray-700 hover:text-primary">3</button>
-              <span className="px-2">...</span>
-              <button className="px-4 py-2 text-gray-700 hover:text-primary">10</button>
-              <button className="px-4 py-2 text-gray-500 hover:text-primary">
-                {rtl ? <ArrowLeft size={20} /> : <ArrowRight size={20} />}
-              </button>
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-xl text-gray-600">
+                {isArabic ? 'لا توجد مقالات مطابقة لبحثك' : 'No articles match your search'}
+              </p>
             </div>
-          </div>
+          ) : (
+            <>
+              <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                {filteredPosts.map((post) => (
+                  <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div className="relative">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={400}
+                        height={250}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          {post.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-6">
+                      <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                        <div className="flex items-center gap-1">
+                          <Calendar size={14} />
+                          <span>{post.date}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock size={14} />
+                          <span>{post.readTime}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Eye size={14} />
+                          <span>{post.views}</span>
+                        </div>
+                      </div>
+
+                      <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2">
+                        {post.title}
+                      </h3>
+
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <User size={16} className="text-gray-400" />
+                          <span className="text-xs text-gray-600">{post.author}</span>
+                        </div>
+
+                        <Link
+                          href={`${locale === 'ar' ? '/blog' : '/en/blog'}/${post.id}`}
+                          className="flex items-center gap-2 text-primary hover:text-primary/80 text-sm font-semibold"
+                        >
+                          {isArabic ? 'اقرأ المزيد' : 'Read More'}
+                          {rtl ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              {/* Results Count */}
+              <div className="mt-8 text-center text-gray-600">
+                {isArabic 
+                  ? `عرض ${filteredPosts.length} من ${allBlogPosts.length} مقال`
+                  : `Showing ${filteredPosts.length} of ${allBlogPosts.length} articles`
+                }
+              </div>
+            </>
+          )}
         </div>
       </section>
 
@@ -327,4 +425,3 @@ export default function BlogPage({ params: { locale } }: Props) {
     </>
   );
 }
-
