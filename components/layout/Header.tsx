@@ -32,21 +32,21 @@ export function Header() {
   
   // Get the language switch path
   const switchLocalePath = () => {
-    // Get current path without locale prefix
-    let currentPath = pathname;
+    // pathname from usePathname() doesn't include locale prefix
+    // So we need to add it based on current and target locale
     
-    // Remove /en prefix if exists
-    if (currentPath.startsWith('/en')) {
-      currentPath = currentPath.substring(3) || '/';
+    // If currently in Arabic and switching to English
+    if (locale === 'ar' && otherLocale === 'en') {
+      return pathname === '/' ? '/en' : `/en${pathname}`;
     }
     
-    // For switching TO English, add /en prefix
-    if (otherLocale === 'en') {
-      return currentPath === '/' ? '/en' : `/en${currentPath}`;
+    // If currently in English and switching to Arabic
+    if (locale === 'en' && otherLocale === 'ar') {
+      return pathname;
     }
     
-    // For switching TO Arabic, use path without prefix
-    return currentPath;
+    // Fallback
+    return pathname;
   };
 
   return (
