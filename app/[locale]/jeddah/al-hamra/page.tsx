@@ -81,9 +81,9 @@ export default function AlHamraPage({ params: { locale } }: Props) {
       <div className="bg-gray-50 py-4">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            <Link href="/" className="hover:text-primary">{isArabic ? 'الرئيسية' : 'Home'}</Link>
+            <Link href={locale === 'ar' ? '/' : '/en'} className="hover:text-primary">{isArabic ? 'الرئيسية' : 'Home'}</Link>
             <span className="mx-2">/</span>
-            <Link href="/jeddah" className="hover:text-primary">{isArabic ? 'مناطق جدة' : 'Jeddah Areas'}</Link>
+            <Link href={locale === 'ar' ? '/jeddah' : '/en/jeddah'} className="hover:text-primary">{isArabic ? 'مناطق جدة' : 'Jeddah Areas'}</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">{isArabic ? 'الحمراء' : 'Al Hamra'}</span>
           </nav>

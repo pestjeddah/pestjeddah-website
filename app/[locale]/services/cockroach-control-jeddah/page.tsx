@@ -149,9 +149,9 @@ export default function CockroachControlPage({ params: { locale } }: Props) {
       <div className="bg-gray-50 py-4">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            <Link href="/" className="hover:text-primary">{isArabic ? 'الرئيسية' : 'Home'}</Link>
+            <Link href={locale === 'ar' ? '/' : '/en'} className="hover:text-primary">{isArabic ? 'الرئيسية' : 'Home'}</Link>
             <span className="mx-2">/</span>
-            <Link href="/services" className="hover:text-primary">{isArabic ? 'الخدمات' : 'Services'}</Link>
+            <Link href={locale === 'ar' ? '/services' : '/en/services'} className="hover:text-primary">{isArabic ? 'الخدمات' : 'Services'}</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">{isArabic ? 'مكافحة الصراصير' : 'Cockroach Control'}</span>
           </nav>
