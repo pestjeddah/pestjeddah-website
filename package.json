@@ -12,10 +12,10 @@
     "format": "prettier --write .",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "geo:images": "bash scripts/exif/tag_images.sh",
-    "geo:videos": "bash scripts/exif/tag_videos.sh",
-    "geo:verify": "bash scripts/exif/verify_meta.sh",
-    "geo:all": "npm run geo:images && npm run geo:videos && npm run geo:verify"
+    "geo:images": "powershell -ExecutionPolicy Bypass -File scripts/exif/tag_images.ps1",
+    "geo:videos": "powershell -ExecutionPolicy Bypass -File scripts/exif/tag_videos.ps1",
+    "geo:verify": "powershell -ExecutionPolicy Bypass -File scripts/exif/verify_meta.ps1",
+    "geo:all": "npm run geo:images && npm run geo:verify"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
