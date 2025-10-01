@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Metadata } from 'next';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -17,11 +17,9 @@ import {
 import { isRTL } from '@/lib/utils';
 import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
-type Props = {
-  params: { locale: string };
-};
-
-export default function BlogPage({ params: { locale } }: Props) {
+export default function BlogPage() {
+  const params = useParams();
+  const locale = params.locale as string;
   const isArabic = locale === 'ar';
   const rtl = isRTL(locale);
   
