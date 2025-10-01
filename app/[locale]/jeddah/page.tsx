@@ -229,7 +229,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
             {areas.map((area) => (
               <Link
                 key={area.slug}
-                href={`/jeddah/${area.slug}`}
+                href={locale === 'ar' ? `/jeddah/${area.slug}` : `/en/jeddah/${area.slug}`}
                 className="group block bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-xl transition-all duration-300 card-hover"
               >
                 <div className="relative aspect-video overflow-hidden">

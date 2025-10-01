@@ -37,7 +37,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'القضاء النهائي على الصراصير بأمان تام باستخدام أحدث المبيدات المرخصة'
         : 'Complete elimination of cockroaches safely using latest licensed pesticides',
-      href: '/services/cockroach-control-jeddah',
+      href: locale === 'ar' ? '/services/cockroach-control-jeddah' : '/en/services/cockroach-control-jeddah',
       image: '/images/Cockroach control Jeddah.jpg',
       features: isArabic 
         ? ['فحص شامل مجاني', 'مبيدات آمنة ومرخصة', 'ضمان 6 أشهر', 'متابعة دورية']
@@ -48,7 +48,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'علاج فعال وآمن لبق الفراش مع ضمان عدم العودة باستخدام تقنيات متقدمة'
         : 'Effective and safe bed bug treatment with no-return guarantee using advanced techniques',
-      href: '/services/bed-bugs-treatment-jeddah',
+      href: locale === 'ar' ? '/services/bed-bugs-treatment-jeddah' : '/en/services/bed-bugs-treatment-jeddah',
       image: '/images/Bed bug treatment Jeddah.jpg',
       features: isArabic 
         ? ['تشخيص دقيق', 'علاج حراري متقدم', 'مبيدات بيولوجية', 'ضمان سنة كاملة']
@@ -59,7 +59,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'حماية شاملة للمباني من النمل الأبيض بأنظمة الحماية المتقدمة'
         : 'Comprehensive building protection from termites with advanced protection systems',
-      href: '/services/termites-control-jeddah',
+      href: locale === 'ar' ? '/services/termites-control-jeddah' : '/en/services/termites-control-jeddah',
       image: '/images/Termite treatment Jeddah.jpg',
       features: isArabic 
         ? ['فحص بأجهزة متقدمة', 'أنظمة حماية وقائية', 'ضمان طويل المدى', 'صيانة دورية']
@@ -70,7 +70,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'حلول متقدمة للتخلص من جميع أنواع النمل داخل وخارج المباني'
         : 'Advanced solutions to eliminate all types of ants inside and outside buildings',
-      href: '/services/ants-control-jeddah',
+      href: locale === 'ar' ? '/services/ants-control-jeddah' : '/en/services/ants-control-jeddah',
       image: '/images/Ant control Jeddah.jpg',
       features: isArabic 
         ? ['تحديد مصدر النمل', 'طعوم متخصصة', 'حاجز وقائي', 'حل جذري']
@@ -81,7 +81,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'التخلص الآمن والفعال من الفئران والجرذان مع منع دخولها مستقبلاً'
         : 'Safe and effective elimination of mice and rats with future entry prevention',
-      href: '/services/rodents-control-jeddah',
+      href: locale === 'ar' ? '/services/rodents-control-jeddah' : '/en/services/rodents-control-jeddah',
       image: '/images/Rodent control Jeddah.jpg',
       features: isArabic 
         ? ['طعوم آمنة', 'سد منافذ الدخول', 'مراقبة مستمرة', 'حلول إنسانية']
@@ -92,7 +92,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'حماية شاملة من البعوض والذباب بتقنيات حديثة وحلول طويلة المدى'
         : 'Comprehensive protection from mosquitoes and flies with modern techniques and long-term solutions',
-      href: '/services/mosquitoes-flies-control-jeddah',
+      href: locale === 'ar' ? '/services/mosquitoes-flies-control-jeddah' : '/en/services/mosquitoes-flies-control-jeddah',
       image: '/images/Mosquito control service.jpg',
       features: isArabic 
         ? ['تقنيات متقدمة', 'حلول بيئية', 'رش دوري', 'مراقبة مستمرة']
@@ -103,7 +103,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'تدخين شامل وتعقيم للمباني والمستودعات لضمان بيئة صحية آمنة'
         : 'Comprehensive fumigation and disinfection for buildings and warehouses ensuring safe healthy environment',
-      href: '/services/fumigation-disinfection',
+      href: locale === 'ar' ? '/services/fumigation-disinfection' : '/en/services/fumigation-disinfection',
       image: '/images/Pest spray service.jpg',
       features: isArabic 
         ? ['تعقيم شامل', 'مواد معتمدة', 'أمان تام', 'شهادة جودة']
@@ -114,7 +114,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
       description: isArabic 
         ? 'عقود وقاية سنوية مع زيارات دورية منتظمة للحفاظ على بيئة خالية من الآفات'
         : 'Annual prevention contracts with regular scheduled visits to maintain pest-free environment',
-      href: '/services/annual-contracts',
+      href: locale === 'ar' ? '/services/annual-contracts' : '/en/services/annual-contracts',
       image: '/images/Pest control contracts.jpg',
       features: isArabic 
         ? ['زيارات دورية', 'خطة مخصصة', 'أسعار تفضيلية', 'استجابة فورية']
@@ -218,7 +218,7 @@ export default function ServicesPage({ params: { locale } }: Props) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href={locale === 'ar' ? '/contact' : '/en/contact'}
               className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors"
             >
               {isArabic ? 'احصل على عرض سعر' : 'Get Quote'}

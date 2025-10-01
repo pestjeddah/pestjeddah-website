@@ -15,49 +15,49 @@ export function ServicesSection() {
   const services = [
     {
       key: 'cockroaches',
-      href: '/services/cockroach-control-jeddah',
+      href: locale === 'ar' ? '/services/cockroach-control-jeddah' : '/en/services/cockroach-control-jeddah',
       image: '/images/Cockroach control Jeddah.jpg',
       icon: '🪳'
     },
     {
       key: 'bedbugs',
-      href: '/services/bed-bugs-treatment-jeddah',
+      href: locale === 'ar' ? '/services/bed-bugs-treatment-jeddah' : '/en/services/bed-bugs-treatment-jeddah',
       image: '/images/Bed bug treatment Jeddah.jpg',
       icon: '🛏️'
     },
     {
       key: 'termites',
-      href: '/services/termites-control-jeddah',
+      href: locale === 'ar' ? '/services/termites-control-jeddah' : '/en/services/termites-control-jeddah',
       image: '/images/Termite treatment Jeddah.jpg',
       icon: '🐜'
     },
     {
       key: 'ants',
-      href: '/services/ants-control-jeddah',
+      href: locale === 'ar' ? '/services/ants-control-jeddah' : '/en/services/ants-control-jeddah',
       image: '/images/Ant control Jeddah.jpg',
       icon: '🐜'
     },
     {
       key: 'rodents',
-      href: '/services/rodents-control-jeddah',
+      href: locale === 'ar' ? '/services/rodents-control-jeddah' : '/en/services/rodents-control-jeddah',
       image: '/images/Rodent control Jeddah.jpg',
       icon: '🐭'
     },
     {
       key: 'mosquitoes',
-      href: '/services/mosquitoes-flies-control-jeddah',
+      href: locale === 'ar' ? '/services/mosquitoes-flies-control-jeddah' : '/en/services/mosquitoes-flies-control-jeddah',
       image: '/images/Mosquito control service.jpg',
       icon: '🦟'
     },
     {
       key: 'fumigation',
-      href: '/services/fumigation-disinfection',
+      href: locale === 'ar' ? '/services/fumigation-disinfection' : '/en/services/fumigation-disinfection',
       image: '/images/Pest spray service.jpg',
       icon: '💨'
     },
     {
       key: 'contracts',
-      href: '/services/annual-contracts',
+      href: locale === 'ar' ? '/services/annual-contracts' : '/en/services/annual-contracts',
       image: '/images/Pest control contracts.jpg',
       icon: '📋'
     }
@@ -145,7 +145,7 @@ export function ServicesSection() {
               }
             </p>
             <Link
-              href="/contact"
+              href={locale === 'ar' ? '/contact' : '/en/contact'}
               className="btn-primary inline-flex items-center gap-2"
             >
               {t('common.contactUs')}
