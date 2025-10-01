@@ -4,8 +4,9 @@ import { useLocale } from 'next-intl';
 import Script from 'next/script';
 
 import { siteConfig } from '@/app/config/site';
+import { JEDDAH } from '@/lib/jsonld';
 
-type SchemaType = 'home' | 'service' | 'article' | 'faq';
+type SchemaType = 'home' | 'service' | 'article' | 'faq' | 'image' | 'video' | 'localService';
 
 interface SchemaInjectorProps {
   type: SchemaType;
@@ -118,6 +119,114 @@ export function SchemaInjector({ type, data }: SchemaInjectorProps) {
           },
           datePublished: data?.publishedAt,
           dateModified: data?.updatedAt || data?.publishedAt
+        };
+
+      case 'image':
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'ImageObject',
+          contentUrl: data?.url || data?.image,
+          caption: data?.caption,
+          width: data?.width || 1200,
+          height: data?.height || 630,
+          contentLocation: {
+            '@type': 'Place',
+            name: data?.locationName || 'Jeddah',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Jeddah',
+              addressRegion: 'Makkah Province',
+              addressCountry: 'SA'
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: data?.lat || JEDDAH.lat,
+              longitude: data?.lon || JEDDAH.lon
+            }
+          },
+          representativeOfPage: data?.representativeOfPage !== false
+        };
+
+      case 'video':
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'VideoObject',
+          name: data?.name || data?.title,
+          description: data?.description,
+          thumbnailUrl: data?.thumbnailUrl || data?.thumbnail,
+          contentUrl: data?.url || data?.contentUrl,
+          uploadDate: data?.uploadDate,
+          duration: data?.duration,
+          contentLocation: {
+            '@type': 'Place',
+            name: data?.locationName || 'Jeddah',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Jeddah',
+              addressRegion: 'Makkah Province',
+              addressCountry: 'SA'
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: data?.lat || JEDDAH.lat,
+              longitude: data?.lon || JEDDAH.lon
+            }
+          }
+        };
+
+      case 'localService':
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: data?.nameAr || `${isArabic ? siteConfig.name : siteConfig.nameEn} - ${data?.areaNameAr || 'جدة'}`,
+          alternateName: data?.nameEn || `${isArabic ? siteConfig.nameEn : siteConfig.name} - ${data?.areaName || 'Jeddah'}`,
+          description: data?.descriptionAr || (isArabic ? siteConfig.description : siteConfig.descriptionEn),
+          image: data?.image,
+          telephone: siteConfig.phone,
+          priceRange: '$$',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: data?.areaName || 'Jeddah',
+            addressRegion: 'Makkah Province',
+            addressCountry: 'SA'
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: data?.lat || JEDDAH.lat,
+            longitude: data?.lon || JEDDAH.lon
+          },
+          openingHoursSpecification: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '00:00',
+            closes: '23:59'
+          },
+          areaServed: {
+            '@type': 'City',
+            name: data?.areaName || 'Jeddah',
+            alternateName: data?.areaNameAr || 'جدة'
+          },
+          hasOfferCatalog: data?.serviceName ? {
+            '@type': 'OfferCatalog',
+            name: isArabic ? 'خدمات مكافحة الحشرات' : 'Pest Control Services',
+            itemListElement: [{
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: data?.serviceName,
+                alternateName: data?.serviceNameAr,
+                description: data?.serviceDescription,
+                provider: {
+                  '@type': 'LocalBusiness',
+                  name: isArabic ? siteConfig.name : siteConfig.nameEn
+                },
+                areaServed: {
+                  '@type': 'City',
+                  name: data?.areaName || 'Jeddah'
+                }
+              }
+            }]
+          } : undefined
         };
 
       default:

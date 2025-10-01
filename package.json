@@ -11,7 +11,11 @@
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "geo:images": "bash scripts/exif/tag_images.sh",
+    "geo:videos": "bash scripts/exif/tag_videos.sh",
+    "geo:verify": "bash scripts/exif/verify_meta.sh",
+    "geo:all": "npm run geo:images && npm run geo:videos && npm run geo:verify"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
