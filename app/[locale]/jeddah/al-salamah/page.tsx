@@ -166,7 +166,7 @@ export default function AlSalamahPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Safe pest control.jpg"
+                src="/images/Safe-pest-control.jpg"
                 alt={isArabic ? 'مكافحة الحشرات الآمنة في السلامة جدة' : 'Safe pest control in Al-Salamah Jeddah'}
                 width={600}
                 height={400}

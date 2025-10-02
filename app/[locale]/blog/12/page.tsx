@@ -50,7 +50,7 @@ export default function BlogPost12({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Home pest treatment.jpg" alt={isArabic ? 'الوقاية الشتوية' : 'Winter prevention'} fill className="object-cover" />
+            <Image src="/images/Home-pest-treatment.jpg" alt={isArabic ? 'الوقاية الشتوية' : 'Winter prevention'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -196,7 +196,7 @@ export default function BlogPost12({ params: { locale } }: Props) {
         title: isArabic ? 'الوقاية من الآفات في فصل الشتاء' : 'Winter Pest Prevention',
         author: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team',
         publishedAt: '2024-06-20',
-        image: '/images/Home pest treatment.jpg'
+        image: '/images/Home-pest-treatment.jpg'
       }} />
     </>
   );

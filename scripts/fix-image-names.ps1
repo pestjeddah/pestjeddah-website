@@ -36,7 +36,7 @@ $replacements = @{
     'Termite treatment Jeddah.jpg' = 'Termite-treatment-Jeddah.jpg'
 }
 
-$files = Get-ChildItem -Path . -Include *.tsx,*.ts -Recurse -File | Where-Object { $_.FullName -notmatch 'node_modules' -and $_.FullName -notmatch '\\.next\\' }
+$files = Get-ChildItem -Path . -Include *.tsx,*.ts -Recurse -File | Where-Object { $_.FullName -notmatch 'node_modules' -and $_.FullName -notmatch '\\.next\\' -and $_.FullName -notmatch '\\test\\' }
 
 foreach ($file in $files) {
     try {

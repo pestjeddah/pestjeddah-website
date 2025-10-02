@@ -271,7 +271,7 @@ export default function TermiteControlPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Termite treatment Jeddah.jpg"
+                src="/images/Termite-treatment-Jeddah.jpg"
                 alt={isArabic ? 'مكافحة النمل الأبيض بجدة' : 'Termite control in Jeddah'}
                 width={600}
                 height={400}

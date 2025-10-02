@@ -136,7 +136,7 @@ export default function AlBawadiPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Pest control Jeddah.jpg"
+                src="/images/Pest-control-Jeddah.jpg"
                 alt={isArabic ? 'مكافحة الحشرات في البوادي' : 'Pest control in Al-Bawadi'}
                 width={600}
                 height={400}
@@ -233,7 +233,7 @@ export default function AlBawadiPage({ params: { locale } }: Props) {
 
             <div>
               <Image
-                src="/images/Professional pest control.jpg"
+                src="/images/Professional-pest-control.jpg"
                 alt={isArabic ? 'فريق محترف' : 'Professional team'}
                 width={600}
                 height={400}

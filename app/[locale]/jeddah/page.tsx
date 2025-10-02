@@ -36,7 +36,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-hamra',
       nameAr: 'حي الحمراء',
       nameEn: 'Al Hamra District',
-      image: '/images/Professional pest control.jpg',
+      image: '/images/Professional-pest-control.jpg',
       description: isArabic 
         ? 'خدمات متخصصة لمكافحة الحشرات في حي الحمراء بجدة'
         : 'Specialized pest control services in Al Hamra district of Jeddah'
@@ -45,7 +45,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-shati',
       nameAr: 'حي الشاطئ',
       nameEn: 'Al Shati District',
-      image: '/images/Pest control Jeddah.jpg',
+      image: '/images/Pest-control-Jeddah.jpg',
       description: isArabic 
         ? 'مكافحة فعالة للحشرات والقوارض في منطقة الشاطئ'
         : 'Effective pest and rodent control in Al Shati area'
@@ -54,7 +54,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-rawdah',
       nameAr: 'حي الروضة',
       nameEn: 'Al Rawdah District',
-      image: '/images/Residential pest control.jpg',
+      image: '/images/Residential-pest-control.jpg',
       description: isArabic 
         ? 'حلول آمنة لمكافحة الآفات في الأحياء السكنية بالروضة'
         : 'Safe pest control solutions in Al Rawdah residential areas'
@@ -63,7 +63,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-salama',
       nameAr: 'حي السلامة',
       nameEn: 'Al Salama District',
-      image: '/images/Home pest treatment.jpg',
+      image: '/images/Home-pest-treatment.jpg',
       description: isArabic 
         ? 'خدمات منزلية متخصصة لمكافحة الحشرات في السلامة'
         : 'Specialized home pest control services in Al Salama'
@@ -72,7 +72,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-naeem',
       nameAr: 'حي النعيم',
       nameEn: 'Al Naeem District',
-      image: '/images/Safe pest control.jpg',
+      image: '/images/Safe-pest-control.jpg',
       description: isArabic 
         ? 'مكافحة آمنة وفعالة للحشرات في حي النعيم'
         : 'Safe and effective pest control in Al Naeem district'
@@ -81,7 +81,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-murjan',
       nameAr: 'حي المرجان',
       nameEn: 'Al Murjan District',
-      image: '/images/Emergency pest control Jeddah.jpg',
+      image: '/images/Emergency-pest-control-Jeddah.jpg',
       description: isArabic 
         ? 'خدمة طوارئ لمكافحة الحشرات في المرجان'
         : 'Emergency pest control service in Al Murjan'
@@ -90,7 +90,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'obhur-north',
       nameAr: 'أبحر الشمالية',
       nameEn: 'Obhur North',
-      image: '/images/Pest management Jeddah.jpg',
+      image: '/images/Pest-management-Jeddah.jpg',
       description: isArabic 
         ? 'إدارة شاملة للآفات في منطقة أبحر الشمالية'
         : 'Comprehensive pest management in Obhur North area'
@@ -99,7 +99,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'obhur-south',
       nameAr: 'أبحر الجنوبية',
       nameEn: 'Obhur South',
-      image: '/images/Commercial pest control Jeddah.jpg',
+      image: '/images/Commercial-pest-control-Jeddah.jpg',
       description: isArabic 
         ? 'خدمات تجارية وسكنية في أبحر الجنوبية'
         : 'Commercial and residential services in Obhur South'
@@ -108,7 +108,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-hamdaniyah',
       nameAr: 'حي الحمدانية',
       nameEn: 'Al Hamdaniyah District',
-      image: '/images/Pest prevention services.jpg',
+      image: '/images/Pest-prevention-services.jpg',
       description: isArabic 
         ? 'خدمات وقائية لمنع انتشار الآفات في الحمدانية'
         : 'Preventive services to prevent pest spread in Al Hamdaniyah'
@@ -117,7 +117,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-aziziyah',
       nameAr: 'حي العزيزية',
       nameEn: 'Al Aziziyah District',
-      image: '/images/Eco-friendly pest control.jpg',
+      image: '/images/Eco-friendly-pest-control.jpg',
       description: isArabic 
         ? 'حلول صديقة للبيئة في حي العزيزية'
         : 'Eco-friendly solutions in Al Aziziyah district'
@@ -126,7 +126,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-bawadi',
       nameAr: 'حي البوادي',
       nameEn: 'Al Bawadi District',
-      image: '/images/Long-lasting pest control.jpg',
+      image: '/images/Long-lasting-pest-control.jpg',
       description: isArabic 
         ? 'حماية طويلة المدى من الآفات في البوادي'
         : 'Long-term pest protection in Al Bawadi'
@@ -135,7 +135,7 @@ export default function JeddahAreasPage({ params: { locale } }: Props) {
       slug: 'al-naseem',
       nameAr: 'حي النسيم',
       nameEn: 'Al Naseem District',
-      image: '/images/Affordable pest control.jpg',
+      image: '/images/Affordable-pest-control.jpg',
       description: isArabic 
         ? 'خدمات بأسعار مناسبة في حي النسيم'
         : 'Affordable services in Al Naseem district'

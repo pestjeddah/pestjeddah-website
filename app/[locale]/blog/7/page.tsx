@@ -51,7 +51,7 @@ export default function BlogPost7({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Rodent control Jeddah.jpg" alt={isArabic ? 'مكافحة القوارض' : 'Rodent control'} fill className="object-cover" />
+            <Image src="/images/Rodent-control-Jeddah.jpg" alt={isArabic ? 'مكافحة القوارض' : 'Rodent control'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -168,7 +168,7 @@ export default function BlogPost7({ params: { locale } }: Props) {
         description: isArabic ? 'دليل شامل لمكافحة القوارض' : 'Comprehensive rodent control guide',
         author: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team',
         publishedAt: '2024-08-20',
-        image: '/images/Rodent control Jeddah.jpg'
+        image: '/images/Rodent-control-Jeddah.jpg'
       }} />
     </>
   );

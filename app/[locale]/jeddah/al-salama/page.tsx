@@ -136,7 +136,7 @@ export default function AlSalamaPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Home pest treatment.jpg"
+                src="/images/Home-pest-treatment.jpg"
                 alt={isArabic ? 'علاج الحشرات المنزلي' : 'Home pest treatment'}
                 width={600}
                 height={400}

@@ -131,7 +131,7 @@ export default function AlNaseemPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Pest control guarantee.jpg"
+                src="/images/Pest-control-guarantee.jpg"
                 alt={isArabic ? 'ضمان مكافحة الحشرات' : 'Pest control guarantee'}
                 width={600}
                 height={400}

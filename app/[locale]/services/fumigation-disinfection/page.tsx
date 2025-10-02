@@ -323,7 +323,7 @@ export default function FumigationPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Pest spray service.jpg"
+                src="/images/Pest-spray-service.jpg"
                 alt={isArabic ? 'التدخين والتعقيم بجدة' : 'Fumigation and disinfection in Jeddah'}
                 width={600}
                 height={400}

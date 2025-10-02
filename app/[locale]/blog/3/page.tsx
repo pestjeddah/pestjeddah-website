@@ -232,7 +232,7 @@ export default function BlogPost3({ params: { locale } }: Props) {
 
             <div className="relative mb-8">
               <Image
-                src="/images/Mosquito control service.jpg"
+                src="/images/Mosquito-control-service.jpg"
                 alt={isArabic ? 'أفضل أوقات مكافحة البعوض' : 'Best times for mosquito control'}
                 width={800}
                 height={400}
@@ -289,7 +289,7 @@ export default function BlogPost3({ params: { locale } }: Props) {
             : 'Complete guide to best times and seasons for mosquito control in Jeddah',
           author: isArabic ? 'م. سارة الزهراني' : 'Eng. Sarah Al-Zahrani',
           datePublished: isArabic ? '8 سبتمبر 2024' : 'September 8, 2024',
-          image: '/images/Mosquito control service.jpg'
+          image: '/images/Mosquito-control-service.jpg'
         }}
       />
     </>

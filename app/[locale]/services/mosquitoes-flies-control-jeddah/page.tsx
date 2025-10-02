@@ -356,7 +356,7 @@ export default function MosquitoControlPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Mosquito control service.jpg"
+                src="/images/Mosquito-control-service.jpg"
                 alt={isArabic ? 'مكافحة البعوض والذباب بجدة' : 'Mosquito and fly control in Jeddah'}
                 width={600}
                 height={400}

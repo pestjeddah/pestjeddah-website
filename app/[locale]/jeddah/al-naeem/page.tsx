@@ -166,7 +166,7 @@ export default function AlNaeemPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Professional exterminators.jpg"
+                src="/images/Professional-exterminators.jpg"
                 alt={isArabic ? 'خدمة VIP مكافحة الحشرات في النعيم جدة' : 'VIP pest control service in Al-Naeem Jeddah'}
                 width={600}
                 height={400}

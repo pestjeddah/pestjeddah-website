@@ -90,7 +90,7 @@ export default function BlogPost1({ params: { locale } }: Props) {
           {/* Featured Image */}
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
             <Image
-              src="/images/Cockroach control Jeddah.jpg"
+              src="/images/Cockroach-control-Jeddah.jpg"
               alt={isArabic ? 'مكافحة الصراصير في المطبخ' : 'Kitchen cockroach control'}
               fill
               className="object-cover"
@@ -301,7 +301,7 @@ export default function BlogPost1({ params: { locale } }: Props) {
             : 'Comprehensive guide for kitchen cockroach prevention',
           author: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team',
           publishedAt: '2024-09-15',
-          image: '/images/Cockroach control Jeddah.jpg'
+          image: '/images/Cockroach-control-Jeddah.jpg'
         }}
       />
     </>

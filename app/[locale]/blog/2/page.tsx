@@ -242,7 +242,7 @@ Don't wait until damage escalates. Early inspection saves you thousands in repai
 
             <div className="relative mb-8">
               <Image
-                src="/images/Termite treatment Jeddah.jpg"
+                src="/images/Termite-treatment-Jeddah.jpg"
                 alt={isArabic ? 'علامات وجود النمل الأبيض' : 'Signs of termites'}
                 width={800}
                 height={400}
@@ -298,7 +298,7 @@ Don't wait until damage escalates. Early inspection saves you thousands in repai
             : 'Learn the early signs of termites and how to detect them',
           author: isArabic ? 'د. أحمد العمراني' : 'Dr. Ahmed Al-Omrani',
           datePublished: isArabic ? '12 سبتمبر 2024' : 'September 12, 2024',
-          image: '/images/Termite treatment Jeddah.jpg'
+          image: '/images/Termite-treatment-Jeddah.jpg'
         }}
       />
     </>

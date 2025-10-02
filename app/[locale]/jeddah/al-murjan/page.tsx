@@ -136,7 +136,7 @@ export default function AlMurjanPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Emergency pest control Jeddah.jpg"
+                src="/images/Emergency-pest-control-Jeddah.jpg"
                 alt={isArabic ? 'خدمة طوارئ مكافحة الحشرات' : 'Emergency pest control service'}
                 width={600}
                 height={400}

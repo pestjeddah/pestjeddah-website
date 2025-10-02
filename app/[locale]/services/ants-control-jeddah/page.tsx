@@ -287,7 +287,7 @@ export default function AntControlPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Ant control Jeddah.jpg"
+                src="/images/Ant-control-Jeddah.jpg"
                 alt={isArabic ? 'مكافحة النمل بجدة' : 'Ant control in Jeddah'}
                 width={600}
                 height={400}

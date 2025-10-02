@@ -88,7 +88,7 @@ export default function BlogPost5({ params: { locale } }: Props) {
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
             <Image
-              src="/images/Pest control for restaurants.jpg"
+              src="/images/Pest-control-for-restaurants.jpg"
               alt={isArabic ? 'التعقيم في المطاعم' : 'Restaurant disinfection'}
               fill
               className="object-cover"
@@ -391,7 +391,7 @@ export default function BlogPost5({ params: { locale } }: Props) {
             : 'Comprehensive guide for regular restaurant disinfection',
           author: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi',
           publishedAt: '2024-09-01',
-          image: '/images/Pest control for restaurants.jpg'
+          image: '/images/Pest-control-for-restaurants.jpg'
         }}
       />
     </>

@@ -227,7 +227,7 @@ export default function BedBugTreatmentPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Bed bug treatment Jeddah.jpg"
+                src="/images/Bed-bug-treatment-Jeddah.jpg"
                 alt={isArabic ? 'علاج بق الفراش بجدة' : 'Bed bug treatment in Jeddah'}
                 width={600}
                 height={400}

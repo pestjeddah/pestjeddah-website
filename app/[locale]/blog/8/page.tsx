@@ -50,7 +50,7 @@ export default function BlogPost8({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Ant control Jeddah.jpg" alt={isArabic ? 'مكافحة النمل' : 'Ant control'} fill className="object-cover" />
+            <Image src="/images/Ant-control-Jeddah.jpg" alt={isArabic ? 'مكافحة النمل' : 'Ant control'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -151,7 +151,7 @@ export default function BlogPost8({ params: { locale } }: Props) {
         title: isArabic ? 'النمل الأسود: كيف تتخلص منه نهائياً؟' : 'Black Ants: How to Get Rid of Them Permanently?',
         author: isArabic ? 'م. سارة الزهراني' : 'Eng. Sarah Al-Zahrani',
         publishedAt: '2024-08-10',
-        image: '/images/Ant control Jeddah.jpg'
+        image: '/images/Ant-control-Jeddah.jpg'
       }} />
     </>
   );

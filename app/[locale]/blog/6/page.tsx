@@ -88,7 +88,7 @@ export default function BlogPost6({ params: { locale } }: Props) {
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
             <Image
-              src="/images/Pest spray service.jpg"
+              src="/images/Pest-spray-service.jpg"
               alt={isArabic ? 'التدخين والتعقيم' : 'Fumigation and disinfection'}
               fill
               className="object-cover"
@@ -480,7 +480,7 @@ export default function BlogPost6({ params: { locale } }: Props) {
             : 'The difference between fumigation and disinfection in pest control',
           author: isArabic ? 'م. خالد السلمي' : 'Eng. Khalid Al-Salmi',
           publishedAt: '2024-08-28',
-          image: '/images/Pest spray service.jpg'
+          image: '/images/Pest-spray-service.jpg'
         }}
       />
     </>

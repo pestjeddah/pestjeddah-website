@@ -112,7 +112,7 @@ Call a professional pest control company if:
 
 Prevention is better than cure, but in case of infestation, don't hesitate to seek specialized help.
     `,
-    image: '/images/Cockroach control Jeddah.jpg',
+    image: '/images/Cockroach-control-Jeddah.jpg',
     categoryAr: 'نصائح وقائية',
     categoryEn: 'Prevention Tips',
     dateAr: '15 سبتمبر 2024',
@@ -162,26 +162,26 @@ export default function BlogArticlePage({ params: { locale, id } }: Props) {
     {
       id: 2,
       title: 'علامات وجود النمل الأبيض في منزلك',
-      image: '/images/Termite treatment Jeddah.jpg',
+      image: '/images/Termite-treatment-Jeddah.jpg',
       category: 'التشخيص'
     },
     {
       id: 3,
       title: 'أفضل أوقات مكافحة البعوض في جدة',
-      image: '/images/Mosquito control service.jpg',
+      image: '/images/Mosquito-control-service.jpg',
       category: 'مكافحة موسمية'
     }
   ] : [
     {
       id: 2,
       title: 'Signs of Termites in Your Home',
-      image: '/images/Termite treatment Jeddah.jpg',
+      image: '/images/Termite-treatment-Jeddah.jpg',
       category: 'Diagnosis'
     },
     {
       id: 3,
       title: 'Best Times for Mosquito Control in Jeddah',
-      image: '/images/Mosquito control service.jpg',
+      image: '/images/Mosquito-control-service.jpg',
       category: 'Seasonal Control'
     }
   ];

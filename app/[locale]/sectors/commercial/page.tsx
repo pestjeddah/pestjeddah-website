@@ -154,7 +154,7 @@ export default function CommercialSectorPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Commercial pest control Jeddah.jpg"
+                src="/images/Commercial-pest-control-Jeddah.jpg"
                 alt={isArabic ? 'مكافحة الحشرات التجارية' : 'Commercial pest control'}
                 width={600}
                 height={400}

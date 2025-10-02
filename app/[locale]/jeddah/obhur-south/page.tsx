@@ -166,7 +166,7 @@ export default function ObhurSouthPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Exterminator Jeddah.jpg"
+                src="/images/Exterminator-Jeddah.jpg"
                 alt={isArabic ? 'خدمة المنتجعات الساحلية في أبحر الجنوبية جدة' : 'Coastal resort service in Obhur South Jeddah'}
                 width={600}
                 height={400}

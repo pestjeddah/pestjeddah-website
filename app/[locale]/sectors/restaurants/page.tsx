@@ -162,7 +162,7 @@ export default function RestaurantsSectorPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Pest control for restaurants.jpg"
+                src="/images/Pest-control-for-restaurants.jpg"
                 alt={isArabic ? 'مكافحة الحشرات للمطاعم' : 'Restaurant pest control'}
                 width={600}
                 height={400}

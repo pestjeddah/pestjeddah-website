@@ -51,7 +51,7 @@ export default function SectorsPage({ params: { locale } }: Props) {
       features: isArabic 
         ? ['فحص مجاني', 'مواد آمنة للأطفال', 'ضمان 6 أشهر', 'متابعة دورية']
         : ['Free inspection', 'Child-safe materials', '6 months guarantee', 'Regular follow-up'],
-      image: '/images/Residential pest control.jpg',
+      image: '/images/Residential-pest-control.jpg',
       link: locale === 'ar' ? '/sectors/residential' : '/en/sectors/residential'
     },
     {
@@ -63,7 +63,7 @@ export default function SectorsPage({ params: { locale } }: Props) {
       features: isArabic 
         ? ['شهادات HACCP', 'مواد معتمدة غذائياً', 'جدولة مرنة', 'تقارير دورية']
         : ['HACCP certificates', 'Food-grade approved materials', 'Flexible scheduling', 'Regular reports'],
-      image: '/images/Pest control for restaurants.jpg',
+      image: '/images/Pest-control-for-restaurants.jpg',
       link: locale === 'ar' ? '/sectors/restaurants' : '/en/sectors/restaurants'
     },
     {
@@ -75,7 +75,7 @@ export default function SectorsPage({ params: { locale } }: Props) {
       features: isArabic 
         ? ['خدمة سرية', 'عمل ليلي', 'استجابة فورية', 'فرق متخصصة']
         : ['Discreet service', 'Night operations', 'Immediate response', 'Specialized teams'],
-      image: '/images/Commercial pest control Jeddah.jpg',
+      image: '/images/Commercial-pest-control-Jeddah.jpg',
       link: locale === 'ar' ? '/sectors/commercial' : '/en/sectors/commercial'
     },
     {
@@ -87,7 +87,7 @@ export default function SectorsPage({ params: { locale } }: Props) {
       features: isArabic 
         ? ['حماية المخزون', 'مراقبة مستمرة', 'تقنيات متقدمة', 'عقود سنوية']
         : ['Inventory protection', 'Continuous monitoring', 'Advanced techniques', 'Annual contracts'],
-      image: '/images/Best pest control company.jpg',
+      image: '/images/Best-pest-control-company.jpg',
       link: locale === 'ar' ? '/sectors/commercial' : '/en/sectors/commercial'
     },
     {
@@ -99,7 +99,7 @@ export default function SectorsPage({ params: { locale } }: Props) {
       features: isArabic 
         ? ['معايير طبية', 'مواد معقمة', 'فرق مدربة', 'سرية تامة']
         : ['Medical standards', 'Sterile materials', 'Trained teams', 'Complete confidentiality'],
-      image: '/images/Safe pest control.jpg',
+      image: '/images/Safe-pest-control.jpg',
       link: locale === 'ar' ? '/sectors/commercial' : '/en/sectors/commercial'
     },
     {
@@ -111,7 +111,7 @@ export default function SectorsPage({ params: { locale } }: Props) {
       features: isArabic 
         ? ['أمان الطلاب', 'مواد غير سامة', 'أوقات مناسبة', 'شهادات صحية']
         : ['Student safety', 'Non-toxic materials', 'Convenient times', 'Health certificates'],
-      image: '/images/Eco-friendly pest control.jpg',
+      image: '/images/Eco-friendly-pest-control.jpg',
       link: locale === 'ar' ? '/sectors/commercial' : '/en/sectors/commercial'
     }
   ];

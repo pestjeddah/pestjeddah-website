@@ -136,7 +136,7 @@ export default function AlHamdaniyaPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Best pest control company.jpg"
+                src="/images/Best-pest-control-company.jpg"
                 alt={isArabic ? 'أفضل شركة مكافحة حشرات' : 'Best pest control company'}
                 width={600}
                 height={400}
@@ -241,7 +241,7 @@ export default function AlHamdaniyaPage({ params: { locale } }: Props) {
 
             <div>
               <Image
-                src="/images/Professional exterminators.jpg"
+                src="/images/Professional-exterminators.jpg"
                 alt={isArabic ? 'فريق محترف' : 'Professional team'}
                 width={600}
                 height={400}

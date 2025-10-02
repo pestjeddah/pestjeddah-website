@@ -166,7 +166,7 @@ export default function AlMarjanPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Best pest control company.jpg"
+                src="/images/Best-pest-control-company.jpg"
                 alt={isArabic ? 'خدمة النخبة مكافحة الحشرات في المرجان جدة' : 'Elite pest control service in Al-Marjan Jeddah'}
                 width={600}
                 height={400}

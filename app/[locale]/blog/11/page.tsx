@@ -50,7 +50,7 @@ export default function BlogPost11({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Insect control Jeddah.jpg" alt={isArabic ? 'مكافحة الحشرات الطائرة' : 'Flying insect control'} fill className="object-cover" />
+            <Image src="/images/Insect-control-Jeddah.jpg" alt={isArabic ? 'مكافحة الحشرات الطائرة' : 'Flying insect control'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -191,7 +191,7 @@ export default function BlogPost11({ params: { locale } }: Props) {
         title: isArabic ? 'الحشرات الطائرة وطرق مكافحتها' : 'Flying Insects and Control Methods',
         author: isArabic ? 'م. خالد السلمي' : 'Eng. Khalid Al-Salmi',
         publishedAt: '2024-07-05',
-        image: '/images/Insect control Jeddah.jpg'
+        image: '/images/Insect-control-Jeddah.jpg'
       }} />
     </>
   );

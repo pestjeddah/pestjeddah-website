@@ -136,7 +136,7 @@ export default function AlShatiPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Insect control Jeddah.jpg"
+                src="/images/Insect-control-Jeddah.jpg"
                 alt={isArabic ? 'مكافحة الحشرات في الشاطئ' : 'Pest control in Al-Shati'}
                 width={600}
                 height={400}
@@ -240,7 +240,7 @@ export default function AlShatiPage({ params: { locale } }: Props) {
 
             <div>
               <Image
-                src="/images/Mosquito control service.jpg"
+                src="/images/Mosquito-control-service.jpg"
                 alt={isArabic ? 'مكافحة البعوض' : 'Mosquito control'}
                 width={600}
                 height={400}

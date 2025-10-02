@@ -155,7 +155,7 @@ export default function AlHamraPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Professional pest control.jpg"
+                src="/images/Professional-pest-control.jpg"
                 alt={isArabic ? 'مكافحة حشرات حي الحمراء' : 'Al Hamra pest control'}
                 width={600}
                 height={400}

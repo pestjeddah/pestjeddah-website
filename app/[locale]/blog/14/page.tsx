@@ -50,7 +50,7 @@ export default function BlogPost14({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Eco-friendly pest control.jpg" alt={isArabic ? 'مكافحة زراعية' : 'Agricultural control'} fill className="object-cover" />
+            <Image src="/images/Eco-friendly-pest-control.jpg" alt={isArabic ? 'مكافحة زراعية' : 'Agricultural control'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -238,7 +238,7 @@ export default function BlogPost14({ params: { locale } }: Props) {
         title: isArabic ? 'مكافحة الآفات الزراعية في الحدائق المنزلية' : 'Agricultural Pest Control in Home Gardens',
         author: isArabic ? 'م. سارة الزهراني' : 'Eng. Sarah Al-Zahrani',
         publishedAt: '2024-05-25',
-        image: '/images/Eco-friendly pest control.jpg'
+        image: '/images/Eco-friendly-pest-control.jpg'
       }} />
     </>
   );

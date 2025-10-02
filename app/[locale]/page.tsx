@@ -36,7 +36,7 @@ export async function generateMetadata({
         : 'Immediate service 24/7, licensed and guaranteed for all types of insects and rodents',
       images: [
         {
-          url: '/images/Pest control Jeddah.jpg',
+          url: '/images/Pest-control-Jeddah.jpg',
           width: 1200,
           height: 630,
           alt: isArabic ? 'شركة مكافحة حشرات بجدة' : 'Pest Control Company in Jeddah',

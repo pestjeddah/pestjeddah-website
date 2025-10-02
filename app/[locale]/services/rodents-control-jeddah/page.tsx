@@ -283,7 +283,7 @@ export default function RodentControlPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Rodent control Jeddah.jpg"
+                src="/images/Rodent-control-Jeddah.jpg"
                 alt={isArabic ? 'مكافحة القوارض بجدة' : 'Rodent control in Jeddah'}
                 width={600}
                 height={400}

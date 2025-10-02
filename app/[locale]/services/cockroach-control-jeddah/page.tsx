@@ -216,7 +216,7 @@ export default function CockroachControlPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Cockroach control Jeddah.jpg"
+                src="/images/Cockroach-control-Jeddah.jpg"
                 alt={isArabic ? 'مكافحة الصراصير بجدة' : 'Cockroach control in Jeddah'}
                 width={600}
                 height={400}

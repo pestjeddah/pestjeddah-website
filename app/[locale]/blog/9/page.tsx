@@ -50,7 +50,7 @@ export default function BlogPost9({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Emergency pest control Jeddah.jpg" alt={isArabic ? 'مكافحة طوارئ' : 'Emergency control'} fill className="object-cover" />
+            <Image src="/images/Emergency-pest-control-Jeddah.jpg" alt={isArabic ? 'مكافحة طوارئ' : 'Emergency control'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -225,7 +225,7 @@ export default function BlogPost9({ params: { locale } }: Props) {
         title: isArabic ? 'علامات تحتاج معها لمكافحة فورية' : 'Signs You Need Immediate Pest Control',
         author: isArabic ? 'د. أحمد العمراني' : 'Dr. Ahmed Al-Omrani',
         publishedAt: '2024-07-25',
-        image: '/images/Emergency pest control Jeddah.jpg'
+        image: '/images/Emergency-pest-control-Jeddah.jpg'
       }} />
     </>
   );

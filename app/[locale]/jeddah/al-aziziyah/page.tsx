@@ -166,7 +166,7 @@ export default function AlAziziyahPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Commercial pest control Jeddah.jpg"
+                src="/images/Commercial-pest-control-Jeddah.jpg"
                 alt={isArabic ? 'خدمة المجمعات السكنية في العزيزية جدة' : 'Residential complex service in Al-Aziziyah Jeddah'}
                 width={600}
                 height={400}

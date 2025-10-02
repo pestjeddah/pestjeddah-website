@@ -191,7 +191,7 @@ export default function ResidentialSectorPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Residential pest control.jpg"
+                src="/images/Residential-pest-control.jpg"
                 alt={isArabic ? 'مكافحة الحشرات للمنازل' : 'Residential pest control'}
                 width={600}
                 height={400}

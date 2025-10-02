@@ -223,7 +223,7 @@ export default function AlRawdahPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Residential pest control.jpg"
+                src="/images/Residential-pest-control.jpg"
                 alt={isArabic ? 'مكافحة الحشرات في الروضة جدة' : 'Pest control in Al-Rawdah Jeddah'}
                 width={600}
                 height={400}

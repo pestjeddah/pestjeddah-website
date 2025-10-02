@@ -88,7 +88,7 @@ export default function BlogPost4({ params: { locale } }: Props) {
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
             <Image
-              src="/images/Bed bug treatment Jeddah.jpg"
+              src="/images/Bed-bug-treatment-Jeddah.jpg"
               alt={isArabic ? 'علاج بق الفراش' : 'Bed bug treatment'}
               fill
               className="object-cover"
@@ -325,7 +325,7 @@ export default function BlogPost4({ params: { locale } }: Props) {
             : 'Comprehensive guide to permanently eliminate bed bugs',
           author: isArabic ? 'أ. محمد الحربي' : 'Mr. Mohammed Al-Harbi',
           publishedAt: '2024-09-05',
-          image: '/images/Bed bug treatment Jeddah.jpg'
+          image: '/images/Bed-bug-treatment-Jeddah.jpg'
         }}
       />
     </>

@@ -51,7 +51,7 @@ export default function BlogPost13({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Safe pest control.jpg" alt={isArabic ? 'مكافحة آمنة' : 'Safe pest control'} fill className="object-cover" />
+            <Image src="/images/Safe-pest-control.jpg" alt={isArabic ? 'مكافحة آمنة' : 'Safe pest control'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -258,7 +258,7 @@ export default function BlogPost13({ params: { locale } }: Props) {
         title: isArabic ? 'المبيدات الآمنة للأطفال والحيوانات الأليفة' : 'Safe Pesticides for Children and Pets',
         author: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi',
         publishedAt: '2024-06-10',
-        image: '/images/Safe pest control.jpg'
+        image: '/images/Safe-pest-control.jpg'
       }} />
     </>
   );

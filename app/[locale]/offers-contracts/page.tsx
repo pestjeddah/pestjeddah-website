@@ -177,7 +177,7 @@ export default function OffersContractsPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Pest control contracts.jpg"
+                src="/images/Pest-control-contracts.jpg"
                 alt={isArabic ? 'عقود مكافحة الحشرات' : 'Pest control contracts'}
                 width={800}
                 height={400}

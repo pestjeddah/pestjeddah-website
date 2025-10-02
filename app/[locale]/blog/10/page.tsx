@@ -50,7 +50,7 @@ export default function BlogPost10({ params: { locale } }: Props) {
           </div>
 
           <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
-            <Image src="/images/Commercial pest control Jeddah.jpg" alt={isArabic ? 'مكافحة في الفنادق' : 'Hotel pest control'} fill className="object-cover" />
+            <Image src="/images/Commercial-pest-control-Jeddah.jpg" alt={isArabic ? 'مكافحة في الفنادق' : 'Hotel pest control'} fill className="object-cover" />
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -226,7 +226,7 @@ export default function BlogPost10({ params: { locale } }: Props) {
         title: isArabic ? 'مكافحة الآفات في الفنادق' : 'Pest Control in Hotels',
         author: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi',
         publishedAt: '2024-07-15',
-        image: '/images/Commercial pest control Jeddah.jpg'
+        image: '/images/Commercial-pest-control-Jeddah.jpg'
       }} />
     </>
   );

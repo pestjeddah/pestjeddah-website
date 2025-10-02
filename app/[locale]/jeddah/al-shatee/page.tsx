@@ -166,7 +166,7 @@ export default function AlShateePage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Professional pest control.jpg"
+                src="/images/Professional-pest-control.jpg"
                 alt={isArabic ? 'مكافحة الحشرات في الشاطئ جدة' : 'Pest control in Al-Shatee Jeddah'}
                 width={600}
                 height={400}

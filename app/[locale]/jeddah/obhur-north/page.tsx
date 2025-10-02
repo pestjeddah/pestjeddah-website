@@ -166,7 +166,7 @@ export default function ObhurNorthPage({ params: { locale } }: Props) {
 
             <div className="relative">
               <Image
-                src="/images/Eco-friendly pest control.jpg"
+                src="/images/Eco-friendly-pest-control.jpg"
                 alt={isArabic ? 'مكافحة الحشرات الساحلية في أبحر الشمالية جدة' : 'Coastal pest control in Obhur North Jeddah'}
                 width={600}
                 height={400}
