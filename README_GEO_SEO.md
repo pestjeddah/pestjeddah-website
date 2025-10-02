@@ -38,7 +38,7 @@ npm run geo:verify
 import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 <SchemaInjector type="image" data={{
-  url: "/images/Cockroach control Jeddah.jpg",
+  url: "/images/Cockroach-control-Jeddah.jpg",
   caption: "مكافحة الصراصير في جدة",
   lat: 21.4925,
   lon: 39.1776
@@ -199,9 +199,9 @@ npm run geo:verify
 
 ### Example Output
 ```
-✅ Cockroach control Jeddah.jpg → GPS: 21.493127, 39.178234
-✅ Bed bug treatment Jeddah.jpg → GPS: 21.491872, 39.176945
-✅ Termite treatment Jeddah.jpg → GPS: 21.492789, 39.177123
+✅ Cockroach-control-Jeddah.jpg → GPS: 21.493127, 39.178234
+✅ Bed-bug-treatment-Jeddah.jpg → GPS: 21.491872, 39.176945
+✅ Termite-treatment-Jeddah.jpg → GPS: 21.492789, 39.177123
 
 🎉 Tagged 34 images successfully!
 ```
@@ -228,7 +228,7 @@ npm run geo:verify
 {
   "@context": "https://schema.org",
   "@type": "ImageObject",
-  "contentUrl": "/images/Cockroach control Jeddah.jpg",
+  "contentUrl": "/images/Cockroach-control-Jeddah.jpg",
   "caption": "مكافحة الصراصير في جدة",
   "contentLocation": {
     "@type": "Place",

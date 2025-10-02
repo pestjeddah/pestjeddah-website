@@ -121,7 +121,7 @@ export function Hero() {
           <div className={cn("relative", rtl && "lg:order-1")}>
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/Professional pest control.jpg"
+                src="/images/Professional-pest-control.jpg"
                 alt={locale === 'ar' ? 'شركة مكافحة حشرات محترفة بجدة' : 'Professional pest control company in Jeddah'}
                 fill
                 className="object-cover"

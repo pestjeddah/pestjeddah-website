@@ -48,7 +48,7 @@ export default function CockroachControlPage() {
       
       {/* NEW: Image schema with GEO */}
       <SchemaInjector type="image" data={{
-        url: "https://pestjeddah.com/images/Cockroach control Jeddah.jpg",
+        url: "https://pestjeddah.com/images/Cockroach-control-Jeddah.jpg",
         caption: "مكافحة الصراصير في جدة - خدمة احترافية",
         lat: 21.4925,
         lon: 39.1776,
@@ -71,7 +71,7 @@ export default function CockroachControlPage() {
 // app/[locale]/services/[service]/page.tsx
 
 <SchemaInjector type="image" data={{
-  url: "/images/Professional pest control.jpg",
+  url: "/images/Professional-pest-control.jpg",
   caption: isArabic 
     ? "مكافحة حشرات احترافية في جدة" 
     : "Professional pest control in Jeddah",
@@ -94,12 +94,12 @@ export default function CockroachControlPage() {
   serviceDescription: "Complete pest control coverage in Al Hamra district",
   lat: 21.5012,  // Al Hamra specific coords (add jitter)
   lon: 39.1823,
-  image: "/images/Professional pest control.jpg"
+  image: "/images/Professional-pest-control.jpg"
 }} />
 
 {/* Also add image schema for the area image */}
 <SchemaInjector type="image" data={{
-  url: "/images/Professional pest control.jpg",
+  url: "/images/Professional-pest-control.jpg",
   caption: "مكافحة الحشرات في حي الحمراء",
   locationName: "Al Hamra, Jeddah",
   lat: 21.5012,
@@ -117,11 +117,11 @@ export default function CockroachControlPage() {
   title: "طرق الوقاية من الصراصير",
   description: "دليل شامل...",
   publishedAt: "2024-01-15",
-  image: "/images/Cockroach control Jeddah.jpg"
+  image: "/images/Cockroach-control-Jeddah.jpg"
 }} />
 
 <SchemaInjector type="image" data={{
-  url: "/images/Cockroach control Jeddah.jpg",
+  url: "/images/Cockroach-control-Jeddah.jpg",
   caption: "طرق الوقاية من الصراصير في المطبخ",
   representativeOfPage: true
 }} />
@@ -190,7 +190,7 @@ const jitter = () => ({
 **Good Alt Text (Descriptive + Context + Location):**
 ```tsx
 <Image
-  src="/images/Cockroach control Jeddah.jpg"
+  src="/images/Cockroach-control-Jeddah.jpg"
   alt="فني متخصص يقوم برش مبيدات لمكافحة الصراصير في مطبخ منزل بجدة"
   // "Specialist technician spraying pesticides for cockroach control in a home kitchen in Jeddah"
 />

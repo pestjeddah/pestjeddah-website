@@ -118,9 +118,9 @@ npm run geo:verify
 🌍 Starting GEO metadata tagging for images...
 📍 Base coordinates: Jeddah, Saudi Arabia (21.492500, 39.177570)
 
-✅ Cockroach control Jeddah.jpg → GPS: 21.493127, 39.178234
-✅ Bed bug treatment Jeddah.jpg → GPS: 21.491872, 39.176945
-✅ Termite treatment Jeddah.jpg → GPS: 21.492789, 39.177123
+✅ Cockroach-control-Jeddah.jpg → GPS: 21.493127, 39.178234
+✅ Bed-bug-treatment-Jeddah.jpg → GPS: 21.491872, 39.176945
+✅ Termite-treatment-Jeddah.jpg → GPS: 21.492789, 39.177123
 ... (31 more files)
 
 🎉 Tagged 34 images successfully!
@@ -147,7 +147,7 @@ export default function CockroachControlPage({ params: { locale } }) {
       
       {/* ✨ NEW: Add image schema */}
       <SchemaInjector type="image" data={{
-        url: "https://pestjeddah.com/images/Cockroach control Jeddah.jpg",
+        url: "https://pestjeddah.com/images/Cockroach-control-Jeddah.jpg",
         caption: locale === 'ar' 
           ? "مكافحة الصراصير في جدة - خدمة احترافية"
           : "Professional cockroach control in Jeddah",
@@ -276,7 +276,7 @@ npm run geo:images
 npm run geo:verify
 
 # 3. Spot check a file
-exiftool -G1 -a "public/images/Pest control Jeddah.jpg" | grep GPS
+exiftool -G1 -a "public/images/Pest-control-Jeddah.jpg" | grep GPS
 ```
 
 ### ⏳ Phase 2: Structured Data (Next)

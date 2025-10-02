@@ -16,49 +16,49 @@ export function ServicesSection() {
     {
       key: 'cockroaches',
       href: locale === 'ar' ? '/services/cockroach-control-jeddah' : '/en/services/cockroach-control-jeddah',
-      image: '/images/Cockroach control Jeddah.jpg',
+      image: '/images/Cockroach-control-Jeddah.jpg',
       icon: '🪳'
     },
     {
       key: 'bedbugs',
       href: locale === 'ar' ? '/services/bed-bugs-treatment-jeddah' : '/en/services/bed-bugs-treatment-jeddah',
-      image: '/images/Bed bug treatment Jeddah.jpg',
+      image: '/images/Bed-bug-treatment-Jeddah.jpg',
       icon: '🛏️'
     },
     {
       key: 'termites',
       href: locale === 'ar' ? '/services/termites-control-jeddah' : '/en/services/termites-control-jeddah',
-      image: '/images/Termite treatment Jeddah.jpg',
+      image: '/images/Termite-treatment-Jeddah.jpg',
       icon: '🐜'
     },
     {
       key: 'ants',
       href: locale === 'ar' ? '/services/ants-control-jeddah' : '/en/services/ants-control-jeddah',
-      image: '/images/Ant control Jeddah.jpg',
+      image: '/images/Ant-control-Jeddah.jpg',
       icon: '🐜'
     },
     {
       key: 'rodents',
       href: locale === 'ar' ? '/services/rodents-control-jeddah' : '/en/services/rodents-control-jeddah',
-      image: '/images/Rodent control Jeddah.jpg',
+      image: '/images/Rodent-control-Jeddah.jpg',
       icon: '🐭'
     },
     {
       key: 'mosquitoes',
       href: locale === 'ar' ? '/services/mosquitoes-flies-control-jeddah' : '/en/services/mosquitoes-flies-control-jeddah',
-      image: '/images/Mosquito control service.jpg',
+      image: '/images/Mosquito-control-service.jpg',
       icon: '🦟'
     },
     {
       key: 'fumigation',
       href: locale === 'ar' ? '/services/fumigation-disinfection' : '/en/services/fumigation-disinfection',
-      image: '/images/Pest spray service.jpg',
+      image: '/images/Pest-spray-service.jpg',
       icon: '💨'
     },
     {
       key: 'contracts',
       href: locale === 'ar' ? '/services/annual-contracts' : '/en/services/annual-contracts',
-      image: '/images/Pest control contracts.jpg',
+      image: '/images/Pest-control-contracts.jpg',
       icon: '📋'
     }
   ];
