@@ -14,7 +14,7 @@ Allow: /api/sitemap
 Allow: /api/robots
 
 # Sitemap location
-Sitemap: https://pestjeddah.com/sitemap.xml
+Sitemap: https://www.pestjeddah.com/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1

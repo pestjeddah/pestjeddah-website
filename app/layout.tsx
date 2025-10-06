@@ -16,7 +16,7 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pestjeddah.com'),
+  metadataBase: new URL('https://www.pestjeddah.com'),
   title: 'شركة مكافحة حشرات بجدة — شركة الأسطورة | رش مبيدات مرخّص 24/7',
   description: 'شركة الأسطورة لمكافحة الحشرات بجدة - خدمة فورية 24/7، مرخصة ومضمونة لجميع أنواع الحشرات والقوارض',
   keywords: ['مكافحة حشرات جدة', 'شركة رش مبيدات', 'مكافحة النمل الأبيض', 'مكافحة الصراصير', 'مكافحة بق الفراش'],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ar_SA',
-    url: 'https://pestjeddah.com',
+    url: 'https://www.pestjeddah.com',
     siteName: 'شركة الأسطورة',
     title: 'شركة مكافحة حشرات بجدة — شركة الأسطورة',
     description: 'شركة الأسطورة لمكافحة الحشرات بجدة - خدمة فورية 24/7، مرخصة ومضمونة',

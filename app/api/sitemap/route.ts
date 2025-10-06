@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { siteConfig } from '@/app/config/site';
 
 export async function GET() {
-  const baseUrl = 'https://pestjeddah.com';
+  const baseUrl = 'https://www.pestjeddah.com';
   
   // Generate sitemap XML
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

@@ -226,7 +226,7 @@ export const serviceLD = ({
   "serviceType": "Pest Control",
   "provider": {
     "@type": "LocalBusiness",
-    "@id": "https://pestjeddah.com/#organization",
+    "@id": "https://www.pestjeddah.com/#organization",
     "name": "شركة الأسطورة لمكافحة الحشرات",
     "alternateName": "Al-Ustora Pest Control",
     "telephone": "+966537887711"

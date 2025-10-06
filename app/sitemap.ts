@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://pestjeddah.com';
+  const baseUrl = 'https://www.pestjeddah.com';
   
   // Base pages for both languages
   const pages = [

@@ -7,8 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/', '/private/'],
     },
-    sitemap: 'https://pestjeddah.com/sitemap.xml',
-    host: 'https://pestjeddah.com'
+    sitemap: 'https://www.pestjeddah.com/sitemap.xml',
+    host: 'https://www.pestjeddah.com'
   };
 }
 

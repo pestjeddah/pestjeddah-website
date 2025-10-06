@@ -18,7 +18,7 @@ export function SchemaInjector({ type, data }: SchemaInjectorProps) {
   const isArabic = locale === 'ar';
 
   const generateSchema = () => {
-    const baseUrl = 'https://pestjeddah.com';
+    const baseUrl = 'https://www.pestjeddah.com';
     
     switch (type) {
       case 'home':

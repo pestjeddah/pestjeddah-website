@@ -81,17 +81,17 @@ export default async function LocaleLayout({
         <link
           rel="alternate"
           hrefLang="ar-SA"
-          href="https://pestjeddah.com/"
+          href="https://www.pestjeddah.com/"
         />
         <link
           rel="alternate"
           hrefLang="en-SA"
-          href="https://pestjeddah.com/en"
+          href="https://www.pestjeddah.com/en"
         />
         <link
           rel="alternate"
           hrefLang="x-default"
-          href="https://pestjeddah.com/"
+          href="https://www.pestjeddah.com/"
         />
       </head>
       <body className={`${inter.variable} ${tajawal.variable} antialiased ${isRTL(locale) ? 'arabic-text' : ''}`}>
