@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
 
-import { Hero } from '@/components/sections/Hero';
+import { HeroSlideshow } from '@/components/sections/HeroSlideshow';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { ProcessSection } from '@/components/sections/ProcessSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
@@ -49,7 +49,7 @@ export async function generateMetadata({
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroSlideshow />
       <ServicesSection />
       <ProcessSection />
       <TestimonialsSection />

@@ -11,12 +11,14 @@ import {
   AlertTriangle,
   Target,
   Zap,
-  Heart
+  Heart,
+  Bug
 } from 'lucide-react';
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
 import { SchemaInjector } from '@/components/seo/SchemaInjector';
+import { ServiceHero } from '@/components/sections/ServiceHero';
 
 type Props = {
   params: { locale: string };
@@ -145,98 +147,29 @@ export default function CockroachControlPage({ params: { locale } }: Props) {
 
   return (
     <>
-      {/* Breadcrumbs */}
-      <div className="bg-gray-50 py-4">
-        <div className="container mx-auto px-4">
-          <nav className="text-sm text-gray-600">
-            <Link href={locale === 'ar' ? '/' : '/en'} className="hover:text-primary">{isArabic ? 'الرئيسية' : 'Home'}</Link>
-            <span className="mx-2">/</span>
-            <Link href={locale === 'ar' ? '/services' : '/en/services'} className="hover:text-primary">{isArabic ? 'الخدمات' : 'Services'}</Link>
-            <span className="mx-2">/</span>
-            <span className="text-gray-900">{isArabic ? 'مكافحة الصراصير' : 'Cockroach Control'}</span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-red-50 to-orange-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                {isArabic ? 'مكافحة الصراصير بجدة' : 'Cockroach Control in Jeddah'}
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                {isArabic 
-                  ? 'خدمة متخصصة للقضاء على الصراصير نهائياً باستخدام أحدث التقنيات والمواد الآمنة. فحص مجاني وضمان 6 أشهر.'
-                  : 'Specialized service to eliminate cockroaches permanently using latest techniques and safe materials. Free inspection and 6 months guarantee.'
-                }
-              </p>
-              
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link
-                  href={createWhatsAppLink(siteConfig.whatsapp, whatsappMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary bg-green-600 hover:bg-green-700 flex items-center justify-center gap-2"
-                >
-                  <MessageCircle size={20} />
-                  {isArabic ? 'احجز الآن عبر واتساب' : 'Book Now via WhatsApp'}
-                </Link>
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="btn-secondary flex items-center justify-center gap-2"
-                >
-                  <Phone size={20} />
-                  {isArabic ? 'اتصل للحصول على فحص مجاني' : 'Call for Free Inspection'}
-                </a>
-              </div>
-
-              {/* Features */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-2 text-green-600">
-                  <CheckCircle size={20} />
-                  <span className="text-sm">{isArabic ? 'فحص مجاني' : 'Free Inspection'}</span>
-                </div>
-                <div className="flex items-center gap-2 text-green-600">
-                  <CheckCircle size={20} />
-                  <span className="text-sm">{isArabic ? 'ضمان 6 أشهر' : '6 Months Guarantee'}</span>
-                </div>
-                <div className="flex items-center gap-2 text-green-600">
-                  <CheckCircle size={20} />
-                  <span className="text-sm">{isArabic ? 'نتائج سريعة' : 'Quick Results'}</span>
-                </div>
-                <div className="flex items-center gap-2 text-green-600">
-                  <CheckCircle size={20} />
-                  <span className="text-sm">{isArabic ? 'مواد آمنة' : 'Safe Materials'}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <Image
-                src="/images/Cockroach-control-Jeddah.jpg"
-                alt={isArabic ? 'مكافحة الصراصير بجدة' : 'Cockroach control in Jeddah'}
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-lg"
-                priority
-              />
-              
-              {/* Emergency Badge */}
-              <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg">
-                <div className="flex items-center gap-2">
-                  <Clock size={16} />
-                  <span className="text-sm font-semibold">
-                    {isArabic ? 'خدمة فورية 24/7' : 'Emergency 24/7'}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="مكافحة الصراصير بجدة"
+        titleEn="Cockroach Control in Jeddah"
+        description="خدمة متخصصة للقضاء على الصراصير نهائياً باستخدام أحدث التقنيات والمواد الآمنة. فحص مجاني وضمان 6 أشهر."
+        descriptionEn="Specialized service to eliminate cockroaches permanently using latest techniques and safe materials. Free inspection and 6 months guarantee."
+        image="/images/Cockroach-control-Jeddah.jpg"
+        imageAlt="مكافحة الصراصير بجدة"
+        imageAltEn="Cockroach control in Jeddah"
+        whatsappMessage={whatsappMessage}
+        phone={siteConfig.phone}
+        breadcrumbs={[
+          { label: isArabic ? 'الرئيسية' : 'Home', href: locale === 'ar' ? '/' : '/en' },
+          { label: isArabic ? 'الخدمات' : 'Services', href: locale === 'ar' ? '/services' : '/en/services' },
+          { label: isArabic ? 'مكافحة الصراصير' : 'Cockroach Control', href: '#' }
+        ]}
+        features={[
+          { icon: Bug, text: isArabic ? 'فحص شامل مجاني' : 'Free Comprehensive Inspection' },
+          { icon: Shield, text: isArabic ? 'ضمان 6 أشهر' : '6 Months Warranty' },
+          { icon: Zap, text: isArabic ? 'نتائج سريعة' : 'Fast Results' },
+          { icon: Heart, text: isArabic ? 'مواد آمنة 100%' : '100% Safe Materials' }
+        ]}
+        bgGradient="from-red-50 via-orange-50 to-yellow-50"
+      />
 
       {/* Symptoms Section */}
       <section className="py-16 bg-white">
