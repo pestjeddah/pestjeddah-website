@@ -11,8 +11,7 @@ import {
   AlertTriangle,
   Target,
   Zap,
-  Heart,
-  Bug
+  Heart
 } from 'lucide-react';
 
 import { siteConfig } from '@/app/config/site';
@@ -162,11 +161,11 @@ export default function CockroachControlPage({ params: { locale } }: Props) {
           { label: isArabic ? 'الخدمات' : 'Services', href: locale === 'ar' ? '/services' : '/en/services' },
           { label: isArabic ? 'مكافحة الصراصير' : 'Cockroach Control', href: '#' }
         ]}
-        features={[
-          { icon: Bug, text: isArabic ? 'فحص شامل مجاني' : 'Free Comprehensive Inspection' },
-          { icon: Shield, text: isArabic ? 'ضمان 6 أشهر' : '6 Months Warranty' },
-          { icon: Zap, text: isArabic ? 'نتائج سريعة' : 'Fast Results' },
-          { icon: Heart, text: isArabic ? 'مواد آمنة 100%' : '100% Safe Materials' }
+        featuresText={[
+          isArabic ? 'فحص شامل مجاني' : 'Free Comprehensive Inspection',
+          isArabic ? 'ضمان 6 أشهر' : '6 Months Warranty',
+          isArabic ? 'نتائج سريعة' : 'Fast Results',
+          isArabic ? 'مواد آمنة 100%' : '100% Safe Materials'
         ]}
         bgGradient="from-red-50 via-orange-50 to-yellow-50"
       />

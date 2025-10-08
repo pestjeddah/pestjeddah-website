@@ -20,10 +20,7 @@ interface ServiceHeroProps {
     label: string;
     href: string;
   }[];
-  features?: {
-    icon: React.ElementType;
-    text: string;
-  }[];
+  featuresText?: string[];
   bgGradient?: string;
 }
 
@@ -38,31 +35,21 @@ export function ServiceHero({
   whatsappMessage,
   phone,
   breadcrumbs,
-  features,
+  featuresText,
   bgGradient = 'from-blue-50 via-white to-green-50'
 }: ServiceHeroProps) {
   const locale = useLocale();
   const rtl = isRTL(locale);
   const isArabic = locale === 'ar';
 
-  const defaultFeatures = features || [
-    {
-      icon: CheckCircle,
-      text: isArabic ? 'فحص مجاني' : 'Free Inspection'
-    },
-    {
-      icon: Shield,
-      text: isArabic ? 'ضمان 6 أشهر' : '6 Months Warranty'
-    },
-    {
-      icon: Clock,
-      text: isArabic ? 'خدمة سريعة' : 'Fast Service'
-    },
-    {
-      icon: Award,
-      text: isArabic ? 'فريق محترف' : 'Professional Team'
-    }
+  const defaultFeaturesText = featuresText || [
+    isArabic ? 'فحص مجاني' : 'Free Inspection',
+    isArabic ? 'ضمان 6 أشهر' : '6 Months Warranty',
+    isArabic ? 'خدمة سريعة' : 'Fast Service',
+    isArabic ? 'فريق محترف' : 'Professional Team'
   ];
+
+  const featureIcons = [CheckCircle, Shield, Clock, Award];
 
   return (
     <>
@@ -125,22 +112,25 @@ export function ServiceHero({
 
               {/* Features Grid */}
               <div className="grid grid-cols-2 gap-4 py-4">
-                {defaultFeatures.map((feature, idx) => (
-                  <div 
-                    key={idx}
-                    className={cn(
-                      "flex items-center gap-3 p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100",
-                      "hover:shadow-md hover:border-primary/20 transition-all duration-300 transform hover:scale-105",
-                      "animate-fade-in-up"
-                    )}
-                    style={{ animationDelay: `${idx * 100}ms` }}
-                  >
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                      <feature.icon className="w-5 h-5 text-primary" />
+                {defaultFeaturesText.map((featureText, idx) => {
+                  const Icon = featureIcons[idx % featureIcons.length];
+                  return (
+                    <div 
+                      key={idx}
+                      className={cn(
+                        "flex items-center gap-3 p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100",
+                        "hover:shadow-md hover:border-primary/20 transition-all duration-300 transform hover:scale-105",
+                        "animate-fade-in-up"
+                      )}
+                      style={{ animationDelay: `${idx * 100}ms` }}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <span className="text-sm font-medium text-gray-700">{featureText}</span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">{feature.text}</span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* CTA Buttons */}
