@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -822,26 +821,6 @@ export default function BlogPost13({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'المبيدات الآمنة للأطفال والحيوانات الأليفة - دليل السلامة الشامل'
-            : 'Safe Pesticides for Children and Pets - Comprehensive Safety Guide',
-          description: isArabic
-            ? 'تعرف على المبيدات الآمنة والطرق الصديقة للبيئة لمكافحة الآفات دون تعريض أطفالك وحيواناتك الأليفة للخطر.'
-            : 'Learn about safe pesticides and eco-friendly methods for pest control without endangering your children and pets.',
-          image: 'https://www.pestjeddah.com/images/Safe-pest-control.jpg',
-          datePublished: '2024-06-10',
-          dateModified: '2024-06-10',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi'
-          }
-        }}
-      />
     </>
   );
 }

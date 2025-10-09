@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -653,26 +652,6 @@ export default function BlogPost12({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'الوقاية من الآفات في فصل الشتاء - دليل شامل لحماية منزلك من الضيوف غير المرغوبين'
-            : 'Winter Pest Prevention - Complete Guide to Protect Your Home from Unwanted Guests',
-          description: isArabic
-            ? 'كيف تحمي منزلك من الآفات التي تبحث عن مأوى دافئ في الشتاء، طرق وقائية فعالة، والتحضير المبكر.'
-            : 'How to protect your home from pests seeking warm shelter in winter, effective prevention methods, and early preparation.',
-          image: 'https://www.pestjeddah.com/images/Home-pest-treatment.jpg',
-          datePublished: '2024-06-20',
-          dateModified: '2024-06-20',
-          author: {
-            '@type': 'Organization',
-            name: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team'
-          }
-        }}
-      />
     </>
   );
 }

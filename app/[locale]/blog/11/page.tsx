@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -693,26 +692,6 @@ export default function BlogPost11({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'الحشرات الطائرة وطرق مكافحتها - دليل شامل للقضاء على الذباب والبعوض'
-            : 'Flying Insects and Control Methods - Complete Guide to Eliminate Flies and Mosquitoes',
-          description: isArabic
-            ? 'دليل متكامل لمكافحة الذباب والبعوض والحشرات الطائرة الأخرى، طرق فعالة للقضاء عليها، والوقاية من عودتها.'
-            : 'Complete guide for controlling flies, mosquitoes and other flying insects, effective elimination methods, and prevention strategies.',
-          image: 'https://www.pestjeddah.com/images/Insect-control-Jeddah.jpg',
-          datePublished: '2024-07-05',
-          dateModified: '2024-07-05',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'م. خالد السلمي' : 'Eng. Khalid Al-Salmi'
-          }
-        }}
-      />
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -779,26 +778,6 @@ export default function BlogPost10({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'مكافحة الآفات في الفنادق - دليل شامل للسلامة والحفاظ على السمعة'
-            : 'Pest Control in Hotels - Complete Guide to Safety and Reputation Protection',
-          description: isArabic
-            ? 'برامج مكافحة متخصصة للفنادق تضمن سلامة النزلاء، حماية السمعة، والامتثال للمعايير الصحية في صناعة الضيافة.'
-            : 'Specialized pest control programs for hotels ensuring guest safety, reputation protection, and compliance with health standards in hospitality industry.',
-          image: 'https://www.pestjeddah.com/images/Commercial-pest-control-Jeddah.jpg',
-          datePublished: '2024-07-15',
-          dateModified: '2024-07-15',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi'
-          }
-        }}
-      />
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -557,26 +556,6 @@ export default function BlogPost9({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'علامات تحتاج معها لمكافحة فورية - متى تتصل بالمختصين فوراً؟'
-            : 'Signs You Need Immediate Pest Control - When to Call Experts Immediately?',
-          description: isArabic
-            ? 'تعرف على العلامات التحذيرية الخطيرة التي تستدعي الاتصال بشركة مكافحة محترفة فوراً، وما الفرق بين المشكلة البسيطة والطارئة.'
-            : 'Learn the dangerous warning signs that require immediate professional pest control, and the difference between simple and emergency problems.',
-          image: 'https://www.pestjeddah.com/images/Emergency-pest-control-Jeddah.jpg',
-          datePublished: '2024-07-25',
-          dateModified: '2024-07-25',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'د. أحمد العمراني' : 'Dr. Ahmed Al-Omrani'
-          }
-        }}
-      />
     </>
   );
 }
