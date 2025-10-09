@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -851,26 +850,6 @@ export default function BlogPost7({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'مكافحة القوارض في المنازل - دليل شامل لطرد الفئران والجرذان نهائياً'
-            : 'Rodent Control in Homes - Complete Guide to Eliminate Mice and Rats Permanently',
-          description: isArabic
-            ? 'دليل متكامل لمكافحة الفئران والجرذان في المنازل، طرق فعالة للقضاء عليها، الوقاية من عودتها، وكيف تحمي عائلتك وممتلكاتك.'
-            : 'Complete guide for mice and rat control in homes, effective elimination methods, prevention strategies, and how to protect your family and property.',
-          image: 'https://www.pestjeddah.com/images/Rodent-control-Jeddah.jpg',
-          datePublished: '2024-08-20',
-          dateModified: '2024-08-20',
-          author: {
-            '@type': 'Organization',
-            name: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team'
-          }
-        }}
-      />
     </>
   );
 }

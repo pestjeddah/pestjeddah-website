@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -792,26 +791,6 @@ export default function BlogPost3({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'أفضل أوقات مكافحة البعوض في جدة - دليل المواسم والتوقيت المثالي'
-            : 'Best Times for Mosquito Control in Jeddah - Seasonal and Optimal Timing Guide',
-          description: isArabic
-            ? 'تعرف على أفضل المواسم والأوقات لمكافحة البعوض بفعالية في جدة، دورة حياة البعوض، العوامل المناخية المؤثرة، وكيفية اختيار التوقيت المثالي.'
-            : 'Learn the best seasons and times for effective mosquito control in Jeddah, mosquito life cycle, climate factors, and how to choose optimal timing.',
-          image: 'https://www.pestjeddah.com/images/Mosquito-control-service.jpg',
-          datePublished: '2024-09-08',
-          dateModified: '2024-09-08',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'م. سارة الزهراني' : 'Eng. Sarah Al-Zahrani'
-          }
-        }}
-      />
     </>
   );
 }

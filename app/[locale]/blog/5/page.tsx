@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -867,26 +866,6 @@ export default function BlogPost5({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'أهمية التعقيم الدوري للمطاعم - دليل شامل للسلامة الغذائية والنجاح'
-            : 'Importance of Regular Restaurant Disinfection - Complete Guide to Food Safety and Success',
-          description: isArabic
-            ? 'تعرف على أهمية التعقيم الدوري للمطاعم، معايير الصحة والسلامة، جدول التعقيم المثالي، وكيف تحافظ على سمعة مطعمك ورضا عملائك.'
-            : 'Learn about the importance of regular restaurant disinfection, health and safety standards, optimal cleaning schedules, and how to maintain your restaurant reputation.',
-          image: 'https://www.pestjeddah.com/images/Pest-control-for-restaurants.jpg',
-          datePublished: '2024-09-01',
-          dateModified: '2024-09-01',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'د. فاطمة الأحمدي' : 'Dr. Fatima Al-Ahmadi'
-          }
-        }}
-      />
     </>
   );
 }

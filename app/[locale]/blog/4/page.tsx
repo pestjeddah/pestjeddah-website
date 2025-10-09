@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -879,26 +878,6 @@ export default function BlogPost4({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'كيفية علاج بق الفراش نهائياً - دليل شامل للقضاء على حشرة الفراش'
-            : 'How to Eliminate Bed Bugs Permanently - Complete Guide to Get Rid of Bed Bugs',
-          description: isArabic
-            ? 'دليل متكامل للقضاء على بق الفراش نهائياً، كيف تكتشفه، طرق العلاج المنزلي والاحترافي، والوقاية من عودته مرة أخرى.'
-            : 'Complete guide to permanently eliminate bed bugs, how to detect them, home and professional treatment methods, and preventing their return.',
-          image: 'https://www.pestjeddah.com/images/Bed-bug-treatment-Jeddah.jpg',
-          datePublished: '2024-09-05',
-          dateModified: '2024-09-05',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'أ. محمد الحربي' : 'Mr. Mohammed Al-Harbi'
-          }
-        }}
-      />
     </>
   );
 }

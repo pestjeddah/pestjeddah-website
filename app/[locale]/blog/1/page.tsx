@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -444,21 +443,6 @@ export default function BlogPost1({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article" 
-        data={{
-          title: isArabic 
-            ? 'طرق الوقاية من الصراصير في المطبخ - دليل شامل'
-            : 'Kitchen Cockroach Prevention Methods - Complete Guide',
-          description: isArabic 
-            ? 'دليل شامل ومفصّل للوقاية من الصراصير في المطبخ مع نصائح عملية وحلول مجربة'
-            : 'Comprehensive guide for kitchen cockroach prevention with practical tips and proven solutions',
-          author: isArabic ? 'فريق الأسطورة' : 'Al-Ustora Team',
-          publishedAt: '2024-09-15',
-          image: '/images/Cockroach-control-Jeddah.jpg'
-        }}
-      />
     </>
   );
 }

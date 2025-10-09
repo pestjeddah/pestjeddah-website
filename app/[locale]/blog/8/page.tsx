@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -717,26 +716,6 @@ export default function BlogPost8({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'النمل الأسود: كيف تتخلص منه نهائياً؟ - دليل شامل وحلول مجربة'
-            : 'Black Ants: How to Get Rid of Them Permanently? - Complete Guide and Tested Solutions',
-          description: isArabic
-            ? 'دليل متكامل للقضاء على النمل الأسود في المنزل والحديقة بشكل نهائي، طرق فعالة، أخطاء شائعة، ووصفات طبيعية مجربة.'
-            : 'Complete guide to permanently eliminate black ants in home and garden, effective methods, common mistakes, and tested natural recipes.',
-          image: 'https://www.pestjeddah.com/images/Ant-control-Jeddah.jpg',
-          datePublished: '2024-08-10',
-          dateModified: '2024-08-10',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'م. سارة الزهراني' : 'Eng. Sarah Al-Zahrani'
-          }
-        }}
-      />
     </>
   );
 }

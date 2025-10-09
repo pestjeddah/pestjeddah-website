@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogArticle } from '@/components/blog/BlogArticle';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -869,26 +868,6 @@ export default function BlogPost2({ params: { locale } }: Props) {
           </>
         )}
       </BlogArticle>
-
-      <SchemaInjector 
-        type="article"
-        locale={locale}
-        customSchema={{
-          headline: isArabic 
-            ? 'علامات وجود النمل الأبيض في منزلك - دليل شامل للكشف المبكر'
-            : 'Signs of Termites in Your Home - Complete Early Detection Guide',
-          description: isArabic
-            ? 'تعرف على العلامات المبكرة لوجود النمل الأبيض في منزلك، كيف تكتشفه قبل أن يتسبب في أضرار جسيمة، وما الإجراءات الوقائية اللازمة.'
-            : 'Learn the early signs of termites in your home, how to detect them before they cause serious damage, and necessary preventive measures.',
-          image: 'https://www.pestjeddah.com/images/Termite-treatment-Jeddah.jpg',
-          datePublished: '2024-09-12',
-          dateModified: '2024-09-12',
-          author: {
-            '@type': 'Person',
-            name: isArabic ? 'د. أحمد العمراني' : 'Dr. Ahmed Al-Omrani'
-          }
-        }}
-      />
     </>
   );
 }
