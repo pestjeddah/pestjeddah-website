@@ -37,12 +37,12 @@ export function TopBar() {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-1 rounded-full transition-colors",
+            "flex items-center gap-2 bg-green-600 hover:bg-green-700 px-5 py-2 rounded-full transition-all shadow-md hover:shadow-lg",
             isRTL && "flex-row-reverse"
           )}
         >
-          <MessageCircle size={16} />
-          <span className="font-medium">{t('whatsapp')}</span>
+          <MessageCircle size={18} className="flex-shrink-0" />
+          <span className="font-bold text-white">{t('whatsapp')}</span>
         </Link>
       </div>
     </div>

@@ -149,24 +149,25 @@ export function HeroSlideshow() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-4 rounded-xl",
-                  "flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  "group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-xl",
+                  "flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105",
+                  "ring-2 ring-green-600 ring-offset-2"
                 )}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <MessageCircle size={24} className="relative z-10 animate-pulse" />
-                <span className="relative z-10 font-bold">{t('hero.cta')}</span>
+                <MessageCircle size={26} className="relative z-10 animate-pulse flex-shrink-0" />
+                <span className="relative z-10 font-extrabold text-white tracking-wide">{t('hero.cta')}</span>
               </Link>
               
               <Link
                 href={`tel:${siteConfig.phone}`}
                 className={cn(
-                  "group relative overflow-hidden bg-white hover:bg-gray-50 text-primary border-2 border-primary text-lg px-8 py-4 rounded-xl",
-                  "flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  "group relative overflow-hidden bg-white hover:bg-gray-50 text-primary border-2 border-primary text-lg px-8 py-5 rounded-xl",
+                  "flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 )}
               >
-                <Phone size={24} className="group-hover:animate-pulse" />
-                <span className="font-bold">{t('hero.ctaSecondary')}</span>
+                <Phone size={26} className="group-hover:animate-pulse flex-shrink-0" />
+                <span className="font-extrabold tracking-wide">{t('hero.ctaSecondary')}</span>
               </Link>
             </div>
 
