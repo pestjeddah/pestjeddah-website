@@ -19,7 +19,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -523,21 +522,51 @@ export default function FumigationPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'التدخين والتعقيم بجدة' : 'Fumigation & Disinfection in Jeddah',
-          description: isArabic 
-            ? 'تدخين شامل وتعقيم للمباني والمستودعات بمواد معتمدة'
-            : 'Comprehensive fumigation and disinfection for buildings and warehouses',
-          serviceType: isArabic ? 'التدخين والتعقيم' : 'Fumigation & Disinfection'
-        }}
-      />
-      
-      <SchemaInjector 
-        type="faq" 
-        data={{ questions: faqItems }}
-      />
+      {/* Coverage & Related Services */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'خدمات التدخين والتعقيم في جميع القطاعات بجدة' : 'Fumigation & Disinfection Services in All Jeddah Sectors'}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Link href={`/${locale}/sectors/commercial`} className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Building className="w-10 h-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">{isArabic ? 'المنشآت التجارية' : 'Commercial Facilities'}</h3>
+                <p className="text-sm text-gray-600">{isArabic ? 'مكاتب، شركات، مراكز تسوق' : 'Offices, companies, shopping centers'}</p>
+              </Link>
+              <Link href={`/${locale}/sectors/restaurants`} className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Building className="w-10 h-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">{isArabic ? 'المطاعم والمقاهي' : 'Restaurants & Cafes'}</h3>
+                <p className="text-sm text-gray-600">{isArabic ? 'تعقيم شامل ومرخص للمطاعم' : 'Comprehensive licensed disinfection for restaurants'}</p>
+              </Link>
+              <Link href={`/${locale}/sectors/residential`} className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Building className="w-10 h-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">{isArabic ? 'المساكن والفلل' : 'Houses & Villas'}</h3>
+                <p className="text-sm text-gray-600">{isArabic ? 'تعقيم آمن للمنازل العائلية' : 'Safe disinfection for family homes'}</p>
+              </Link>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'أهمية التدخين والتعقيم الدوري' : 'Importance of Regular Fumigation & Disinfection'}
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {isArabic 
+                  ? 'التدخين والتعقيم ليسا ترفاً بل ضرورة صحية، خاصة للمنشآت التجارية والمطاعم والمستودعات. التعقيم الدوري يحمي من الأمراض المعدية، يقضي على جميع أنواع الحشرات، ويضمن بيئة صحية آمنة.'
+                  : 'Fumigation and disinfection are not a luxury but a health necessity, especially for commercial facilities, restaurants and warehouses. Regular disinfection protects from infectious diseases, eliminates all insect types, and ensures safe healthy environment.'
+                }
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                {isArabic 
+                  ? 'في جدة، المناخ الدافئ والرطوبة العالية تجعل التعقيم الدوري أكثر أهمية. نستخدم مواد معتمدة من وزارة الصحة وتقنيات متقدمة تضمن القضاء الكامل على الجراثيم والحشرات دون أضرار جانبية.'
+                  : 'In Jeddah, warm climate and high humidity make regular disinfection more important. We use materials approved by Ministry of Health and advanced techniques ensuring complete elimination of germs and insects without side effects.'
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

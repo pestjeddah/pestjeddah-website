@@ -19,7 +19,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -360,6 +359,346 @@ export default function BedBugTreatmentPage({ params: { locale } }: Props) {
         </div>
       </section>
 
+      {/* Understanding Bed Bugs Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'ما هو بق الفراش وكيف ينتشر؟' : 'What Are Bed Bugs and How Do They Spread?'}
+              </h2>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div className="bg-gray-50 rounded-xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'معلومات عن بق الفراش' : 'About Bed Bugs'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isArabic 
+                    ? 'بق الفراش حشرات صغيرة بنية اللون تتغذى على دم الإنسان. يبلغ حجمها حوالي 5 ملم وتكون مسطحة قبل التغذية ومنتفخة بعدها. تنشط ليلاً وتختبئ في شقوق المراتب، الأسرّة، الأثاث، وخلف ورق الجدران خلال النهار.'
+                    : 'Bed bugs are small brown insects that feed on human blood. They are about 5mm in size and flat before feeding and swollen after. They are active at night and hide in mattress cracks, beds, furniture, and behind wallpaper during the day.'
+                  }
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {isArabic 
+                    ? 'تستطيع الأنثى وضع من 200-500 بيضة خلال حياتها، مما يجعل الإصابة تنتشر بسرعة كبيرة إذا لم يتم التعامل معها فوراً. يمكن لبق الفراش البقاء على قيد الحياة لمدة تصل إلى عام بدون طعام.'
+                    : 'The female can lay 200-500 eggs during her lifetime, causing infestations to spread rapidly if not dealt with immediately. Bed bugs can survive up to a year without food.'
+                  }
+                </p>
+              </div>
+
+              <div className="bg-blue-50 rounded-xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'كيف ينتشر بق الفراش؟' : 'How Do Bed Bugs Spread?'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">
+                      {isArabic ? 'السفر والإقامة في الفنادق - ينتقل عبر الحقائب والملابس' : 'Travel and hotel stays - transfers via luggage and clothing'}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">
+                      {isArabic ? 'الأثاث المستعمل - خاصة المراتب والأسرّة المستخدمة' : 'Used furniture - especially used mattresses and beds'}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">
+                      {isArabic ? 'الانتقال بين الشقق في المباني السكنية' : 'Moving between apartments in residential buildings'}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">
+                      {isArabic ? 'زيارة أماكن موبوءة والعودة بالحشرات عالقة بالملابس' : 'Visiting infested places and returning with bugs on clothing'}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'الآثار الصحية والنفسية لبق الفراش' : 'Health and Psychological Effects of Bed Bugs'}
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <AlertTriangle className="text-red-500" size={20} />
+                    {isArabic ? 'الآثار الجسدية' : 'Physical Effects'}
+                  </h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>{isArabic ? 'لدغات مؤلمة ومثيرة للحكة الشديدة' : 'Painful and intensely itchy bites'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>{isArabic ? 'احمرار وتورم في مناطق اللدغ' : 'Redness and swelling in bite areas'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>{isArabic ? 'ردود فعل تحسسية في بعض الحالات' : 'Allergic reactions in some cases'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>{isArabic ? 'قلة النوم والأرق المستمر' : 'Sleep deprivation and persistent insomnia'}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <Heart className="text-orange-500" size={20} />
+                    {isArabic ? 'الآثار النفسية' : 'Psychological Effects'}
+                  </h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500 mt-1">•</span>
+                      <span>{isArabic ? 'القلق والتوتر الدائم' : 'Constant anxiety and stress'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500 mt-1">•</span>
+                      <span>{isArabic ? 'الإحراج والعزلة الاجتماعية' : 'Embarrassment and social isolation'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500 mt-1">•</span>
+                      <span>{isArabic ? 'الخوف من انتشار العدوى للآخرين' : 'Fear of spreading infestation to others'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500 mt-1">•</span>
+                      <span>{isArabic ? 'الشعور بعدم الراحة في المنزل' : 'Feeling uncomfortable at home'}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Coverage Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'نخدم جميع أحياء جدة' : 'We Serve All Jeddah Neighborhoods'}
+              </h2>
+              <p className="text-gray-600">
+                {isArabic 
+                  ? 'خدمة علاج بق الفراش متوفرة في جميع أنحاء جدة مع الاستجابة السريعة'
+                  : 'Bed bug treatment service available throughout Jeddah with rapid response'
+                }
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-rawdah`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الروضة' : 'Al-Rawdah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-aziziyah`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'العزيزية' : 'Al-Aziziyah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-naseem`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'النسيم' : 'Al-Naseem'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-shati`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الشاطئ' : 'Al-Shati'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/obhur-north`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'أبحر الشمالية' : 'Obhur North'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-marjan`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Home className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'المرجان' : 'Al-Marjan'}</span>
+              </Link>
+            </div>
+
+            <div className="bg-white rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {isArabic ? 'لماذا يزداد انتشار بق الفراش في جدة؟' : 'Why Is Bed Bug Infestation Increasing in Jeddah?'}
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    {isArabic 
+                      ? 'جدة كمدينة سياحية وتجارية كبرى تشهد حركة سفر وانتقال مستمرة. هذا يزيد من فرص انتقال بق الفراش من خلال الفنادق، الشقق المفروشة، والأثاث المستعمل.'
+                      : 'Jeddah, as a major tourist and commercial city, experiences constant travel and movement. This increases opportunities for bed bug transmission through hotels, furnished apartments, and used furniture.'
+                    }
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    {isArabic 
+                      ? 'المباني السكنية الكبيرة والشقق المتجاورة تسهل انتقال الحشرات بين الوحدات. كما أن المناخ الدافئ في جدة يوفر بيئة مثالية لتكاثر بق الفراش على مدار العام.'
+                      : 'Large residential buildings and adjacent apartments facilitate insect transfer between units. Jeddah\'s warm climate also provides an ideal environment for year-round bed bug reproduction.'
+                    }
+                  </p>
+                </div>
+                <div className="bg-blue-50 rounded-lg p-6">
+                  <h4 className="font-semibold text-gray-900 mb-4">{isArabic ? 'أكثر المناطق عرضة للإصابة' : 'Most Vulnerable Areas'}</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <AlertTriangle className="text-orange-500" size={16} />
+                      <span>{isArabic ? 'الفنادق والشقق الفندقية' : 'Hotels and serviced apartments'}</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <AlertTriangle className="text-orange-500" size={16} />
+                      <span>{isArabic ? 'مساكن الطلاب والعمال' : 'Student and worker housing'}</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <AlertTriangle className="text-orange-500" size={16} />
+                      <span>{isArabic ? 'المنازل القديمة والشقق المفروشة' : 'Old houses and furnished apartments'}</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <AlertTriangle className="text-orange-500" size={16} />
+                      <span>{isArabic ? 'مراكز التسوق وقاعات السينما' : 'Shopping centers and cinemas'}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prevention Tips Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'نصائح وقائية شاملة ضد بق الفراش' : 'Comprehensive Prevention Tips Against Bed Bugs'}
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-green-50 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <Shield className="text-green-600" />
+                  {isArabic ? 'الوقاية أثناء السفر' : 'Prevention While Traveling'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'افحص غرفة الفندق فور الوصول، خاصة المرتبة والأثاث' : 'Inspect hotel room upon arrival, especially mattress and furniture'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'ضع الحقائب على حامل بعيداً عن السرير والجدران' : 'Place luggage on stand away from bed and walls'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'اغسل جميع الملابس بماء ساخن فور العودة من السفر' : 'Wash all clothes in hot water upon return from travel'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'افحص الحقائب جيداً قبل إدخالها للمنزل' : 'Inspect luggage thoroughly before bringing into home'}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <Home className="text-blue-600" />
+                  {isArabic ? 'الوقاية في المنزل' : 'Prevention at Home'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'استخدم أغطية واقية للمراتب والوسائد' : 'Use protective covers for mattresses and pillows'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'نظف بالمكنسة الكهربائية بانتظام، خاصة حول السرير' : 'Vacuum regularly, especially around bed'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'أزل الفوضى وقلل من أماكن الاختباء المحتملة' : 'Remove clutter and reduce potential hiding places'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'افحص الأثاث المستعمل جيداً قبل إدخاله للمنزل' : 'Inspect used furniture thoroughly before bringing into home'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {isArabic ? 'ماذا تفعل عند اكتشاف بق الفراش؟' : 'What to Do When You Discover Bed Bugs?'}
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold">1</span>
+                  </div>
+                  <h4 className="font-semibold mb-2">{isArabic ? 'لا تتجاهل المشكلة' : 'Don\'t Ignore the Problem'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'بق الفراش يتكاثر بسرعة، العلاج الفوري ضروري' : 'Bed bugs multiply quickly, immediate treatment is essential'}</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold">2</span>
+                  </div>
+                  <h4 className="font-semibold mb-2">{isArabic ? 'اتصل بالمحترفين فوراً' : 'Call Professionals Immediately'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'العلاج الذاتي نادراً ما ينجح مع بق الفراش' : 'Self-treatment rarely succeeds with bed bugs'}</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold">3</span>
+                  </div>
+                  <h4 className="font-semibold mb-2">{isArabic ? 'اتبع تعليمات المتخصصين' : 'Follow Specialist Instructions'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'التعاون الكامل يضمن نجاح العلاج' : 'Full cooperation ensures treatment success'}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'خدمات مكافحة أخرى قد تهمك' : 'Other Pest Control Services You May Need'}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href={`/${locale}/services/cockroach-control-jeddah`} className="bg-white rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Bug className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'مكافحة الصراصير' : 'Cockroach Control'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'القضاء على الصراصير بجميع أنواعها بتقنيات متقدمة' : 'Eliminate all types of cockroaches with advanced techniques'}</p>
+              </Link>
+              <Link href={`/${locale}/services/rodents-control-jeddah`} className="bg-white rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Target className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'مكافحة القوارض' : 'Rodent Control'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'حلول فعالة للتخلص من الفئران والجرذان نهائياً' : 'Effective solutions to eliminate mice and rats permanently'}</p>
+              </Link>
+              <Link href={`/${locale}/services/fumigation-disinfection`} className="bg-white rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Zap className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'التدخين والتعقيم' : 'Fumigation & Disinfection'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'تعقيم شامل للمنشآت والمنازل بأحدث التقنيات' : 'Comprehensive facility and home disinfection with latest technology'}</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -416,22 +755,6 @@ export default function BedBugTreatmentPage({ params: { locale } }: Props) {
           </div>
         </div>
       </section>
-
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة بق الفراش بجدة' : 'Bed Bug Treatment in Jeddah',
-          description: isArabic 
-            ? 'علاج متقدم لبق الفراش بتقنية التسخين الحراري'
-            : 'Advanced bed bug treatment with heat technology',
-          serviceType: isArabic ? 'مكافحة بق الفراش' : 'Bed Bug Treatment'
-        }}
-      />
-      
-      <SchemaInjector 
-        type="faq" 
-        data={{ questions: faqItems }}
-      />
     </>
   );
 }

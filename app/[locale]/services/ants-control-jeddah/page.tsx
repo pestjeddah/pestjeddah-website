@@ -19,7 +19,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -438,6 +437,128 @@ export default function AntControlPage({ params: { locale } }: Props) {
         </div>
       </section>
 
+      {/* Service Coverage Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'خدمة مكافحة النمل في جميع أحياء جدة' : 'Ant Control Service in All Jeddah Neighborhoods'}
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4 mb-12">
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-naseem`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'النسيم' : 'Al-Naseem'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-aziziyah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'العزيزية' : 'Al-Aziziyah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/obhur-north`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'أبحر الشمالية' : 'Obhur North'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-rawdah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الروضة' : 'Al-Rawdah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-marjan`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'المرجان' : 'Al-Marjan'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-shati`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الشاطئ' : 'Al-Shati'}</span>
+              </Link>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'لماذا ينتشر النمل في جدة؟' : 'Why Are Ants Common in Jeddah?'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isArabic 
+                    ? 'المناخ الدافئ الرطب في جدة يوفر بيئة مثالية لتكاثر النمل على مدار العام. القرب من البحر يزيد الرطوبة وهو ما يجذب النمل للمنازل بحثاً عن الماء والطعام.'
+                    : 'Jeddah\'s warm humid climate provides ideal environment for year-round ant reproduction. Proximity to sea increases humidity which attracts ants to homes searching for water and food.'
+                  }
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {isArabic 
+                    ? 'كثرة المساحات الخضراء والحدائق المنزلية، إضافة لتوفر مصادر الطعام في المنازل والمطاعم، تجعل مكافحة النمل تحدياً مستمراً يتطلب حلولاً متخصصة.'
+                    : 'Abundance of green spaces and home gardens, plus availability of food sources in homes and restaurants, make ant control an ongoing challenge requiring specialized solutions.'
+                  }
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'أضرار النمل المحتملة' : 'Potential Ant Damage'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <AlertTriangle className="text-orange-500 mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{isArabic ? 'تلوث الطعام' : 'Food Contamination'}</h4>
+                      <p className="text-sm text-gray-600">{isArabic ? 'النمل ينقل البكتيريا والجراثيم للطعام' : 'Ants transfer bacteria and germs to food'}</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <AlertTriangle className="text-orange-500 mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{isArabic ? 'إزعاج مستمر' : 'Constant Nuisance'}</h4>
+                      <p className="text-sm text-gray-600">{isArabic ? 'خطوط النمل المستمرة في المطبخ والمنزل' : 'Continuous ant trails in kitchen and home'}</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <AlertTriangle className="text-orange-500 mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{isArabic ? 'أضرار هيكلية' : 'Structural Damage'}</h4>
+                      <p className="text-sm text-gray-600">{isArabic ? 'النمل الحفار يدمر الخشب والهياكل' : 'Carpenter ants destroy wood and structures'}</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'خدمات مكافحة متكاملة أخرى' : 'Other Integrated Pest Control Services'}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href={`/${locale}/services/cockroach-control-jeddah`} className="bg-white rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Shield className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'مكافحة الصراصير' : 'Cockroach Control'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'القضاء على الصراصير بجميع أنواعها بتقنيات متقدمة' : 'Eliminate all types of cockroaches with advanced techniques'}</p>
+              </Link>
+              <Link href={`/${locale}/services/termites-control-jeddah`} className="bg-white rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Zap className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'مكافحة النمل الأبيض' : 'Termite Control'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'حماية كاملة من النمل الأبيض بأنظمة متقدمة' : 'Complete termite protection with advanced systems'}</p>
+              </Link>
+              <Link href={`/${locale}/services/rodents-control-jeddah`} className="bg-white rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Heart className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'مكافحة القوارض' : 'Rodent Control'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'حلول إنسانية وآمنة للتخلص من القوارض' : 'Humane and safe solutions to eliminate rodents'}</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -494,22 +615,6 @@ export default function AntControlPage({ params: { locale } }: Props) {
           </div>
         </div>
       </section>
-
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة النمل بجدة' : 'Ant Control in Jeddah',
-          description: isArabic 
-            ? 'حلول متقدمة للتخلص من جميع أنواع النمل بطعوم متخصصة'
-            : 'Advanced solutions to eliminate all ant types with specialized baits',
-          serviceType: isArabic ? 'مكافحة النمل' : 'Ant Control'
-        }}
-      />
-      
-      <SchemaInjector 
-        type="faq" 
-        data={{ questions: faqItems }}
-      />
     </>
   );
 }

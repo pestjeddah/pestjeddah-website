@@ -20,7 +20,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -607,21 +606,52 @@ export default function MosquitoControlPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة البعوض والذباب بجدة' : 'Mosquito & Fly Control in Jeddah',
-          description: isArabic 
-            ? 'حماية شاملة من البعوض والذباب بتقنيات حديثة وحلول بيئية'
-            : 'Comprehensive protection from mosquitoes and flies with modern techniques',
-          serviceType: isArabic ? 'مكافحة البعوض والذباب' : 'Mosquito & Fly Control'
-        }}
-      />
-      
-      <SchemaInjector 
-        type="faq" 
-        data={{ questions: faqItems }}
-      />
+      {/* Service Coverage Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'خدمة مكافحة البعوض والذباب في جميع أحياء جدة' : 'Mosquito & Fly Control Service in All Jeddah Neighborhoods'}
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4 mb-8">
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Wind className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-shati`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Wind className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الشاطئ' : 'Al-Shati'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/obhur-north`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Wind className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'أبحر الشمالية' : 'Obhur North'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-marjan`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Wind className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'المرجان' : 'Al-Marjan'}</span>
+              </Link>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'لماذا جدة بيئة مناسبة للبعوض والذباب؟' : 'Why Is Jeddah Suitable Environment for Mosquitoes & Flies?'}
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {isArabic 
+                  ? 'موقع جدة الساحلي والرطوبة العالية يوفران بيئة مثالية لتكاثر البعوض والذباب. المياه الراكدة في الحدائق والشوارع، إضافة للمناخ الدافئ على مدار السنة، تجعل مكافحة الحشرات الطائرة ضرورة دائمة.'
+                  : 'Jeddah\'s coastal location and high humidity provide ideal environment for mosquito and fly breeding. Stagnant water in gardens and streets, plus year-round warm climate, make flying insect control a constant necessity.'
+                }
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                {isArabic 
+                  ? 'كثرة المساحات الخضراء، القرب من البحر، وانتشار المطاعم والأسواق كلها عوامل تزيد من نشاط البعوض والذباب، مما يتطلب برامج مكافحة موسمية ومنتظمة.'
+                  : 'Abundance of green spaces, proximity to sea, and spread of restaurants and markets all increase mosquito and fly activity, requiring seasonal and regular control programs.'
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

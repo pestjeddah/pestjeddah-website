@@ -14,12 +14,12 @@ import {
   Heart,
   Search,
   Lock,
-  Eye
+  Eye,
+  Thermometer
 } from 'lucide-react';
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -450,6 +450,248 @@ export default function RodentControlPage({ params: { locale } }: Props) {
         </div>
       </section>
 
+      {/* Service Coverage Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'نخدم جميع أحياء جدة بسرعة' : 'We Serve All Jeddah Neighborhoods Quickly'}
+              </h2>
+              <p className="text-gray-600">
+                {isArabic 
+                  ? 'استجابة سريعة لمكافحة القوارض في كل أنحاء جدة'
+                  : 'Quick response for rodent control throughout Jeddah'
+                }
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-4 mb-12">
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-rawdah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الروضة' : 'Al-Rawdah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-naeem`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'النعيم' : 'Al-Naeem'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-bawadi`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'البوادي' : 'Al-Bawadi'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-marjan`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'المرجان' : 'Al-Marjan'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/obhur-north`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'أبحر الشمالية' : 'Obhur North'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-shati`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الشاطئ' : 'Al-Shati'}</span>
+              </Link>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'لماذا تزداد مشكلة القوارض في جدة؟' : 'Why Is Rodent Problem Increasing in Jeddah?'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isArabic 
+                    ? 'جدة كمدينة ساحلية بمناخ دافئ تشهد توفر مصادر طعام ومياه، مما يجعلها بيئة مثالية لتكاثر القوارض. التوسع العمراني السريع والمباني القديمة توفر العديد من نقاط الدخول والمأوى.'
+                    : 'Jeddah, as a coastal city with warm climate, has abundant food and water sources, making it an ideal environment for rodent reproduction. Rapid urban expansion and old buildings provide many entry points and shelter.'
+                  }
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {isArabic 
+                    ? 'المطاعم والأسواق المنتشرة، بقايا الطعام في الأحياء السكنية، وشبكات الصرف الصحي القديمة كلها عوامل تساهم في زيادة نشاط القوارض.'
+                    : 'Widespread restaurants and markets, food waste in residential areas, and old sewer systems all contribute to increased rodent activity.'
+                  }
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'الأضرار الاقتصادية للقوارض' : 'Economic Damage from Rodents'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <AlertTriangle className="text-red-500 mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{isArabic ? 'تلف المخزون' : 'Stock Damage'}</h4>
+                      <p className="text-sm text-gray-600">{isArabic ? 'تلوث وإتلاف المواد الغذائية والمخزون' : 'Contamination and damage of food and stock'}</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <AlertTriangle className="text-red-500 mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{isArabic ? 'أضرار البنية التحتية' : 'Infrastructure Damage'}</h4>
+                      <p className="text-sm text-gray-600">{isArabic ? 'قضم الأسلاك، الأنابيب، والعوازل' : 'Gnawing wires, pipes, and insulation'}</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <AlertTriangle className="text-red-500 mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{isArabic ? 'فقدان السمعة' : 'Reputation Loss'}</h4>
+                      <p className="text-sm text-gray-600">{isArabic ? 'خاصة للمطاعم والفنادق والمنشآت التجارية' : 'Especially for restaurants, hotels and commercial facilities'}</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prevention Tips Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'نصائح وقائية للحماية من القوارض' : 'Prevention Tips to Protect Against Rodents'}
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-white rounded-xl p-6 border-2 border-green-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <Shield className="text-green-600" />
+                  {isArabic ? 'داخل المنزل' : 'Inside the Home'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'احفظ الطعام في حاويات محكمة الإغلاق' : 'Store food in airtight containers'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'نظف بقايا الطعام فوراً ولا تتركها طوال الليل' : 'Clean food scraps immediately and don\'t leave overnight'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'أغلق القمامة بإحكام واخرجها يومياً' : 'Close garbage tightly and dispose daily'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'رتب المخزن والأماكن المزدحمة' : 'Organize storage and cluttered areas'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-green-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'افحص المنزل بانتظام بحثاً عن علامات القوارض' : 'Inspect home regularly for rodent signs'}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <Lock className="text-blue-600" />
+                  {isArabic ? 'حول المنزل' : 'Around the Home'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'افحص وأصلح أي شقوق في الجدران والأساسات' : 'Inspect and repair any cracks in walls and foundations'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'ثبت شبكات معدنية على فتحات التهوية' : 'Install metal screens on ventilation openings'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'أبعد الحطب والنباتات عن الجدران الخارجية' : 'Keep firewood and plants away from exterior walls'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'قص الأشجار والشجيرات المتدلية على السطح' : 'Trim trees and shrubs hanging over roof'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">{isArabic ? 'تأكد من عدم وجود مصادر مياه راكدة' : 'Ensure no standing water sources'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 border-2 border-yellow-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <AlertTriangle className="text-yellow-600" />
+                {isArabic ? 'متى تحتاج لخدمة احترافية؟' : 'When Do You Need Professional Service?'}
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">{isArabic ? 'اتصل فوراً إذا:' : 'Call Immediately If:'}</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                      {isArabic ? 'شاهدت قوارض خلال النهار' : 'You see rodents during daytime'}
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                      {isArabic ? 'وجدت فضلات متعددة في أماكن مختلفة' : 'Found multiple droppings in different places'}
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                      {isArabic ? 'سمعت أصوات متكررة في الجدران أو السقف' : 'Heard repeated sounds in walls or ceiling'}
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                      {isArabic ? 'لاحظت آثار قضم على الأسلاك الكهربائية' : 'Noticed gnaw marks on electrical wires'}
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg p-4">
+                  <p className="text-gray-700 leading-relaxed">
+                    {isArabic 
+                      ? 'التأخير في مكافحة القوارض يؤدي لتفاقم المشكلة وزيادة التكاليف. التدخل المبكر بخدمة احترافية يضمن حلاً سريعاً وآمناً وفعالاً.'
+                      : 'Delaying rodent control leads to problem escalation and increased costs. Early intervention with professional service ensures fast, safe and effective solution.'
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'خدمات مكافحة أخرى قد تحتاجها' : 'Other Pest Control Services You May Need'}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href={`/${locale}/services/cockroach-control-jeddah`} className="bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Shield className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'مكافحة الصراصير' : 'Cockroach Control'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'القضاء على الصراصير بجميع أنواعها بتقنيات متقدمة' : 'Eliminate all types of cockroaches with advanced techniques'}</p>
+              </Link>
+              <Link href={`/${locale}/services/bed-bugs-treatment-jeddah`} className="bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Thermometer className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'علاج بق الفراش' : 'Bed Bug Treatment'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'علاج حراري متقدم للقضاء على بق الفراش نهائياً' : 'Advanced heat treatment to eliminate bed bugs permanently'}</p>
+              </Link>
+              <Link href={`/${locale}/services/termites-control-jeddah`} className="bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-shadow">
+                <Zap className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">{isArabic ? 'مكافحة النمل الأبيض' : 'Termite Control'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'حماية كاملة من النمل الأبيض بأنظمة متقدمة' : 'Complete termite protection with advanced systems'}</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -506,22 +748,6 @@ export default function RodentControlPage({ params: { locale } }: Props) {
           </div>
         </div>
       </section>
-
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة القوارض بجدة' : 'Rodent Control in Jeddah',
-          description: isArabic 
-            ? 'التخلص الآمن والفعال من الفئران والجرذان بطعوم آمنة'
-            : 'Safe and effective elimination of mice and rats with safe baits',
-          serviceType: isArabic ? 'مكافحة القوارض' : 'Rodent Control'
-        }}
-      />
-      
-      <SchemaInjector 
-        type="faq" 
-        data={{ questions: faqItems }}
-      />
     </>
   );
 }

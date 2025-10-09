@@ -14,12 +14,12 @@ import {
   Heart,
   Users,
   TrendingDown,
-  Award
+  Award,
+  Building
 } from 'lucide-react';
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -552,16 +552,66 @@ export default function AnnualContractsPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'العقود السنوية لمكافحة الحشرات' : 'Annual Pest Control Contracts',
-          description: isArabic 
-            ? 'عقود وقاية سنوية مع زيارات دورية وأسعار تفضيلية'
-            : 'Annual prevention contracts with regular visits and preferential prices',
-          serviceType: isArabic ? 'عقود سنوية' : 'Annual Contracts'
-        }}
-      />
+      {/* Additional Content Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'العقود السنوية لجميع القطاعات في جدة' : 'Annual Contracts for All Sectors in Jeddah'}
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <Link href={`/${locale}/sectors/restaurants`} className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl hover:shadow-xl transition-shadow border border-orange-200">
+                <Award className="w-12 h-12 text-orange-600 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{isArabic ? 'المطاعم والمقاهي' : 'Restaurants & Cafes'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'عقود متوافقة مع متطلبات وزارة الصحة والبلدية' : 'Contracts compliant with Ministry of Health and Municipality requirements'}</p>
+              </Link>
+              <Link href={`/${locale}/sectors/commercial`} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl hover:shadow-xl transition-shadow border border-blue-200">
+                <Building className="w-12 h-12 text-blue-600 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{isArabic ? 'الشركات والمكاتب' : 'Companies & Offices'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'برامج وقاية مخصصة للمنشآت التجارية' : 'Customized prevention programs for commercial facilities'}</p>
+              </Link>
+              <Link href={`/${locale}/sectors/residential`} className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl hover:shadow-xl transition-shadow border border-green-200">
+                <Users className="w-12 h-12 text-green-600 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{isArabic ? 'المجمعات السكنية' : 'Residential Complexes'}</h3>
+                <p className="text-gray-600 text-sm">{isArabic ? 'عقود شاملة للمجمعات والأبراج السكنية' : 'Comprehensive contracts for complexes and residential towers'}</p>
+              </Link>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {isArabic ? 'لماذا العقود السنوية هي الخيار الأفضل؟' : 'Why Are Annual Contracts the Best Choice?'}
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">{isArabic ? 'التوفير المالي' : 'Financial Savings'}</h4>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    {isArabic 
+                      ? 'العقد السنوي يوفر حتى 40% مقارنة بالزيارات الفردية. كلما زاد عدد الزيارات، انخفضت تكلفة الزيارة الواحدة، مما يجعله الخيار الأكثر اقتصادية للمنشآت.'
+                      : 'Annual contract saves up to 40% compared to individual visits. The more visits, the lower cost per visit, making it the most economical choice for facilities.'
+                    }
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">{isArabic ? 'الحماية المستمرة' : 'Continuous Protection'}</h4>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    {isArabic 
+                      ? 'الزيارات الدورية المنتظمة تمنع ظهور الحشرات من الأساس. لن تضطر للانتظار حتى تتفاقم المشكلة - الوقاية دائماً أفضل وأرخص من العلاج.'
+                      : 'Regular periodic visits prevent insect appearance from the start. You won\'t have to wait until problem escalates - prevention is always better and cheaper than treatment.'
+                    }
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed mt-4">
+                {isArabic 
+                  ? 'في جدة، المناخ الدافئ يجعل الحشرات نشطة على مدار السنة. العقد السنوي يضمن حماية متواصلة دون الحاجة للقلق أو التذكير بمواعيد الزيارات - نحن نهتم بذلك عنك.'
+                  : 'In Jeddah, warm climate keeps insects active year-round. Annual contract ensures continuous protection without worry or visit reminders - we take care of that for you.'
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
