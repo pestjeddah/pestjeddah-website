@@ -66,6 +66,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // This is a root layout for Next.js with i18n
+  // The actual html and body tags are in app/[locale]/layout.tsx
   return children;
 }
 
