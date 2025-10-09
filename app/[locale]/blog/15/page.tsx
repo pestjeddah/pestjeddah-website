@@ -327,14 +327,16 @@ export default function Blog15({ params: { locale } }: Props) {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link 
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+            className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-10 py-4 rounded-xl hover:bg-green-700 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
+            <span>📞</span>
             احجز فحص مجاني الآن
           </Link>
           <Link 
             href="tel:+966123456789"
-            className="inline-flex items-center justify-center gap-2 bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors font-semibold"
+            className="inline-flex items-center justify-center gap-3 bg-white text-green-600 border-3 border-green-600 px-10 py-4 rounded-xl hover:bg-green-50 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
+            <span>📱</span>
             اتصل بنا: 123456789
           </Link>
         </div>
@@ -492,14 +494,16 @@ export default function Blog15({ params: { locale } }: Props) {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link 
             href="/en/contact"
-            className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+            className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-10 py-4 rounded-xl hover:bg-green-700 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
+            <span>📞</span>
             Book Free Inspection Now
           </Link>
           <Link 
             href="tel:+966123456789"
-            className="inline-flex items-center justify-center gap-2 bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors font-semibold"
+            className="inline-flex items-center justify-center gap-3 bg-white text-green-600 border-3 border-green-600 px-10 py-4 rounded-xl hover:bg-green-50 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
+            <span>📱</span>
             Call Us: 123456789
           </Link>
         </div>

@@ -763,8 +763,9 @@ export default function BlogPost5({ params: { locale } }: Props) {
                   </Link>
                   <Link 
                     href="/contact"
-                    className="bg-white text-primary border-2 border-primary px-8 py-4 rounded-lg font-bold hover:bg-primary/5 transition-colors"
+                    className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-10 py-4 rounded-xl hover:bg-green-700 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
+                    <span>📞</span>
                     احجز استشارة مجانية
                   </Link>
                 </div>
