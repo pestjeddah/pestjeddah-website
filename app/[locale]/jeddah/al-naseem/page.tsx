@@ -15,7 +15,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -306,16 +305,142 @@ export default function AlNaseemPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة الحشرات في النسيم' : 'Pest Control in Al-Naseem',
-          description: isArabic 
-            ? 'خدمة مكافحة حشرات متخصصة في حي النسيم بجدة'
-            : 'Specialized pest control service in Al-Naseem district, Jeddah',
-          serviceType: isArabic ? 'مكافحة الحشرات' : 'Pest Control'
-        }}
-      />
+      {/* About Al-Naseem */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+              {isArabic ? 'النسيم: الحي العصري' : 'Al-Naseem: Modern District'}
+            </h2>
+
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'عن حي النسيم' : 'About Al-Naseem'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isArabic 
+                    ? 'حي النسيم من الأحياء الحديثة في جدة، يتميز بالتخطيط العمراني الممتاز والبنية التحتية المتطورة. يضم الحي فيلات راقية، مجمعات سكنية عصرية، ومراكز تجارية متعددة.'
+                    : 'Al-Naseem is modern district in Jeddah, distinguished by excellent urban planning and advanced infrastructure. The district includes upscale villas, modern residential complexes, and multiple shopping centers.'
+                  }
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {isArabic 
+                    ? 'رغم الحداثة، تحتاج المنازل والمجمعات السكنية في النسيم لبرامج وقائية ضد الآفات. نقدم حلولاً عصرية وآمنة تناسب الفيلات الحديثة والمجمعات الراقية.'
+                    : 'Despite modernity, homes and residential complexes in Al-Naseem need preventive pest control programs. We provide modern and safe solutions suitable for modern villas and upscale complexes.'
+                  }
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'الآفات الشائعة في النسيم' : 'Common Pests in Al-Naseem'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'النمل الأبيض حول الفيلات' : 'Termites around villas'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'الصراصير في المطابخ الحديثة' : 'Cockroaches in modern kitchens'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'البعوض في الحدائق المنزلية' : 'Mosquitoes in home gardens'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'النمل بالقرب من المسابح' : 'Ants near swimming pools'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {isArabic ? 'خدماتنا في حي النسيم' : 'Our Services in Al-Naseem'}
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Link href={`/${locale}/services/termites-control-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'مكافحة النمل الأبيض' : 'Termite Control'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'حماية الفيلات والمباني الجديدة' : 'Protection for villas and new buildings'}</p>
+                </Link>
+                <Link href={`/${locale}/services/mosquitoes-flies-control-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'مكافحة البعوض' : 'Mosquito Control'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'حلول آمنة للحدائق والمنازل' : 'Safe solutions for gardens and homes'}</p>
+                </Link>
+                <Link href={`/${locale}/sectors/residential`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'برامج وقائية' : 'Prevention Programs'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'عقود صيانة سنوية للفيلات' : 'Annual maintenance contracts for villas'}</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prevention Tips */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'نصائح للوقاية في حي النسيم' : 'Prevention Tips for Al-Naseem'}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-blue-50 p-6 rounded-lg">
+                <Home className="w-10 h-10 text-blue-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'صيانة الحدائق' : 'Garden Maintenance'}</h3>
+                <p className="text-gray-700">{isArabic ? 'تقليم الأشجار بانتظام وإزالة المياه الراكدة لمنع تكاثر البعوض' : 'Regular tree trimming and removing stagnant water to prevent mosquito breeding'}</p>
+              </div>
+              <div className="bg-blue-50 p-6 rounded-lg">
+                <Building2 className="w-10 h-10 text-blue-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'فحص دوري للفيلات' : 'Periodic Villa Inspection'}</h3>
+                <p className="text-gray-700">{isArabic ? 'فحص سنوي للنمل الأبيض خاصة قبل موسم الأمطار' : 'Annual termite inspection especially before rainy season'}</p>
+              </div>
+              <div className="bg-blue-50 p-6 rounded-lg">
+                <Award className="w-10 h-10 text-blue-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'تخزين آمن' : 'Safe Storage'}</h3>
+                <p className="text-gray-700">{isArabic ? 'تخزين الأطعمة في حاويات محكمة خاصة في المطابخ الكبيرة' : 'Store food in sealed containers especially in large kitchens'}</p>
+              </div>
+              <div className="bg-blue-50 p-6 rounded-lg">
+                <CheckCircle className="w-10 h-10 text-blue-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'نظافة المسابح' : 'Pool Cleanliness'}</h3>
+                <p className="text-gray-700">{isArabic ? 'تنظيف محيط المسابح ومنع تراكم الأوساخ التي تجذب الحشرات' : 'Cleaning pool surroundings and preventing dirt accumulation that attracts insects'}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Areas */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'نخدم أيضاً المناطق المجاورة' : 'We Also Serve Nearby Areas'}
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4">
+              <Link href={`/${locale}/jeddah/al-aziziyah`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'العزيزية' : 'Al-Aziziyah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-rawdah`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الروضة' : 'Al-Rawdah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
