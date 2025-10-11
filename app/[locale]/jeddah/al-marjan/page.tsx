@@ -16,7 +16,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -250,16 +249,190 @@ export default function AlMarjanPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة الحشرات النخبة في المرجان' : 'Elite Pest Control in Al-Marjan',
-          description: isArabic 
-            ? 'خدمة النخبة لمكافحة الحشرات في حي المرجان بجدة'
-            : 'Elite pest control service in Al-Marjan district, Jeddah',
-          serviceType: isArabic ? 'مكافحة الحشرات' : 'Pest Control'
-        }}
-      />
+      {/* About Al-Marjan */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+              {isArabic ? 'المرجان: التميز والفخامة' : 'Al-Marjan: Excellence & Luxury'}
+            </h2>
+
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'عن حي المرجان' : 'About Al-Marjan District'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isArabic 
+                    ? 'حي المرجان من أرقى وأحدث الأحياء في جدة، يتميز بالتخطيط العمراني المتقدم والفيلات الفاخرة. المنطقة تضم قصوراً واسعة، حدائق خاصة، ومرافق من الطراز العالمي.'
+                    : 'Al-Marjan is one of most upscale and modern districts in Jeddah, distinguished by advanced urban planning and luxury villas. The area includes spacious palaces, private gardens, and world-class facilities.'
+                  }
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {isArabic 
+                    ? 'سكان المرجان يستحقون خدمات مكافحة حشرات من مستوى النخبة. نقدم برامج مخصصة تحافظ على خصوصيتك وتحمي استثمارك العقاري بمواد آمنة وعالية الجودة.'
+                    : 'Al-Marjan residents deserve elite-level pest control services. We provide customized programs that maintain your privacy and protect your real estate investment with safe and high-quality materials.'
+                  }
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'خدماتنا النخبة' : 'Our Elite Services'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-amber-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'فحص دوري للقصور والفيلات الكبرى' : 'Periodic inspection for palaces and large villas'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-amber-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'حماية الحدائق الخاصة والمساحات الواسعة' : 'Protection for private gardens and vast spaces'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-amber-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'مواد آمنة للأطفال والحيوانات الأليفة' : 'Safe materials for children and pets'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-amber-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'مواعيد مرنة تحترم خصوصيتك' : 'Flexible appointments respecting your privacy'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {isArabic ? 'خدماتنا المتخصصة في المرجان' : 'Our Specialized Services in Al-Marjan'}
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Link href={`/${locale}/services/annual-contracts`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'عقود النخبة السنوية' : 'Elite Annual Contracts'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'صيانة شاملة للقصور والفيلات' : 'Comprehensive maintenance for palaces and villas'}</p>
+                </Link>
+                <Link href={`/${locale}/services/termites-control-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'حماية الأخشاب الفاخرة' : 'Luxury Wood Protection'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'معالجة النمل الأبيض للأثاث الراقي' : 'Termite treatment for upscale furniture'}</p>
+                </Link>
+                <Link href={`/${locale}/sectors/residential`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'برامج وقائية' : 'Prevention Programs'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'خطط مخصصة للمنازل الفاخرة' : 'Customized plans for luxury homes'}</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Elite Features */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'لماذا خدمة النخبة للمرجان؟' : 'Why Elite Service for Al-Marjan?'}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-amber-50 p-6 rounded-lg">
+                <Crown className="w-10 h-10 text-amber-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'خصوصية مطلقة' : 'Complete Privacy'}</h3>
+                <p className="text-gray-700">{isArabic ? 'فريق محدد من الفنيين المدربين لخدمة المنازل الفاخرة مع احترام كامل للخصوصية' : 'Specific team of trained technicians serving luxury homes with full privacy respect'}</p>
+              </div>
+              <div className="bg-amber-50 p-6 rounded-lg">
+                <Gem className="w-10 h-10 text-amber-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'مواد فاخرة وآمنة' : 'Premium & Safe Materials'}</h3>
+                <p className="text-gray-700">{isArabic ? 'استخدام أفضل المواد العالمية الآمنة للأطفال والحيوانات الأليفة مع عطور طبيعية' : 'Using best international materials safe for children and pets with natural fragrances'}</p>
+              </div>
+              <div className="bg-amber-50 p-6 rounded-lg">
+                <Shield className="w-10 h-10 text-amber-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'حماية طويلة الأمد' : 'Long-Term Protection'}</h3>
+                <p className="text-gray-700">{isArabic ? 'ضمان ممتد يصل لسنة كاملة مع فحوصات ربع سنوية مجانية' : 'Extended warranty up to one year with free quarterly inspections'}</p>
+              </div>
+              <div className="bg-amber-50 p-6 rounded-lg">
+                <CheckCircle className="w-10 h-10 text-amber-600 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'خدمة 24/7' : '24/7 Service'}</h3>
+                <p className="text-gray-700">{isArabic ? 'استجابة فورية لطلبات النخبة في أي وقت على مدار الساعة' : 'Immediate response to elite requests anytime round the clock'}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Luxury Homes Need Special Care */}
+      <section className="py-16 bg-gradient-to-br from-amber-50 to-yellow-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'المنازل الفاخرة تحتاج عناية خاصة' : 'Luxury Homes Need Special Care'}
+            </h2>
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {isArabic ? 'الأثاث والتجهيزات الفاخرة' : 'Luxury Furniture & Fixtures'}
+                  </h3>
+                  <p className="text-gray-700">
+                    {isArabic 
+                      ? 'القصور والفيلات في المرجان تحتوي على أثاث فاخر وأخشاب نادرة تحتاج لحماية خاصة من النمل الأبيض. نستخدم مواد متطورة لا تؤثر على الأخشاب الثمينة أو اللمسات النهائية.'
+                      : 'Palaces and villas in Al-Marjan contain luxury furniture and rare woods needing special protection from termites. We use advanced materials that don\'t affect precious woods or finishes.'
+                    }
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {isArabic ? 'الحدائق والمساحات الخارجية' : 'Gardens & Outdoor Spaces'}
+                  </h3>
+                  <p className="text-gray-700">
+                    {isArabic 
+                      ? 'الحدائق الواسعة والمساحات الخارجية تتطلب برامج مكافحة شاملة للبعوض والحشرات الطائرة. نستخدم تقنيات متقدمة تحمي المساحات الكبيرة دون التأثير على النباتات أو جودة الهواء.'
+                      : 'Vast gardens and outdoor spaces require comprehensive mosquito and flying insect control programs. We use advanced techniques protecting large spaces without affecting plants or air quality.'
+                    }
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {isArabic ? 'الخصوصية والسرية' : 'Privacy & Confidentiality'}
+                  </h3>
+                  <p className="text-gray-700">
+                    {isArabic 
+                      ? 'نفهم أهمية الخصوصية لسكان المرجان. فريقنا مدرب على احترام خصوصية العملاء، والعمل بصمت وكفاءة، مع التزام تام بالسرية المهنية.'
+                      : 'We understand importance of privacy for Al-Marjan residents. Our team is trained to respect client privacy, work quietly and efficiently, with complete professional confidentiality.'
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Areas */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'نخدم أيضاً الأحياء الراقية المجاورة' : 'We Also Serve Nearby Upscale Districts'}
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4">
+              <Link href={`/${locale}/jeddah/obhur-north`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-amber-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'أبحر الشمالية' : 'Obhur North'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-naseem`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-amber-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'النسيم' : 'Al-Naseem'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-rawdah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-amber-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الروضة' : 'Al-Rawdah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-amber-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

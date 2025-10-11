@@ -15,7 +15,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -353,16 +352,166 @@ export default function AlShatiPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة الحشرات في الشاطئ' : 'Pest Control in Al-Shati',
-          description: isArabic 
-            ? 'خدمة مكافحة حشرات متخصصة للمناطق الساحلية في حي الشاطئ بجدة'
-            : 'Specialized coastal pest control service in Al-Shati district, Jeddah',
-          serviceType: isArabic ? 'مكافحة الحشرات' : 'Pest Control'
-        }}
-      />
+      {/* About Al-Shati */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+              {isArabic ? 'حي الشاطئ: الحياة على البحر' : 'Al-Shati: Life by the Sea'}
+            </h2>
+
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'عن حي الشاطئ' : 'About Al-Shati District'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isArabic 
+                    ? 'حي الشاطئ من أقدم وأشهر الأحياء الساحلية في جدة، يمتد على طول كورنيش جدة ويتميز بقربه من البحر الأحمر. يضم الحي مزيجاً من المباني السكنية القديمة والحديثة، مع العديد من المطاعم والكافيهات على الكورنيش.'
+                    : 'Al-Shati is one of oldest and most famous coastal districts in Jeddah, extending along Jeddah Corniche and distinguished by proximity to Red Sea. The district includes mix of old and modern residential buildings, with many restaurants and cafes on corniche.'
+                  }
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {isArabic 
+                    ? 'القرب المباشر من البحر والرطوبة المستمرة يتطلب برامج مكافحة حشرات متخصصة. نقدم حلولاً مصممة خصيصاً لتحديات البيئة الساحلية مع ضمان طويل الأمد.'
+                    : 'Direct proximity to sea and continuous humidity require specialized pest control programs. We provide solutions specifically designed for coastal environment challenges with long-term guarantee.'
+                  }
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'المشاكل الشائعة في الشاطئ' : 'Common Problems in Al-Shati'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-cyan-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'البعوض الساحلي طوال العام' : 'Coastal mosquitoes year-round'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-cyan-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'الرطوبة العالية التي تجذب الحشرات' : 'High humidity attracting insects'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-cyan-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'النمل الأبيض في المباني القديمة' : 'Termites in old buildings'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-cyan-600 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'الصراصير في المباني القريبة من المطاعم' : 'Cockroaches in buildings near restaurants'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {isArabic ? 'خدماتنا في حي الشاطئ' : 'Our Services in Al-Shati'}
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Link href={`/${locale}/services/mosquitoes-flies-control-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'مكافحة البعوض الساحلي' : 'Coastal Mosquito Control'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'برامج متخصصة مقاومة للرياح البحرية' : 'Specialized programs resistant to sea winds'}</p>
+                </Link>
+                <Link href={`/${locale}/services/termites-control-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'حماية المباني القديمة' : 'Old Building Protection'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'معالجة النمل الأبيض في المباني التراثية' : 'Termite treatment in heritage buildings'}</p>
+                </Link>
+                <Link href={`/${locale}/sectors/residential`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'صيانة دورية' : 'Periodic Maintenance'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'عقود ربع سنوية للمنازل الساحلية' : 'Quarterly contracts for coastal homes'}</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Al-Shati is Special */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'لماذا يحتاج الشاطئ لمكافحة مستمرة؟' : 'Why Does Al-Shati Need Continuous Control?'}
+            </h2>
+            <div className="bg-cyan-50 rounded-xl p-8">
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {isArabic ? 'الموقع على الكورنيش' : 'Location on Corniche'}
+                    </h3>
+                    <p className="text-gray-700">
+                      {isArabic 
+                        ? 'القرب المباشر من البحر يعني رطوبة مستمرة وبيئة مثالية لتكاثر البعوض والحشرات الطائرة. الرياح البحرية تحمل الحشرات من منطقة لأخرى، مما يتطلب تغطية شاملة.'
+                        : 'Direct proximity to sea means continuous humidity and ideal environment for mosquito and flying insect breeding. Sea winds carry insects from one area to another, requiring comprehensive coverage.'
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {isArabic ? 'كثافة المطاعم' : 'Restaurant Density'}
+                    </h3>
+                    <p className="text-gray-700">
+                      {isArabic 
+                        ? 'الحي يضم العشرات من المطاعم والكافيهات على الكورنيش. هذا يعني وجود مصادر غذاء مستمرة تجذب الصراصير والنمل، وتتطلب برامج مكافحة منتظمة للمباني السكنية المجاورة.'
+                        : 'District includes dozens of restaurants and cafes on corniche. This means continuous food sources attracting cockroaches and ants, requiring regular control programs for adjacent residential buildings.'
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {isArabic ? 'المباني القديمة' : 'Old Buildings'}
+                    </h3>
+                    <p className="text-gray-700">
+                      {isArabic 
+                        ? 'العديد من المباني في الشاطئ قديمة وتحتوي على شقوق وفتحات تسهل دخول الحشرات. الرطوبة العالية تضعف الأخشاب، مما يجعلها عرضة للنمل الأبيض أكثر من المناطق الأخرى.'
+                        : 'Many buildings in Al-Shati are old and contain cracks and openings facilitating insect entry. High humidity weakens wood, making it more susceptible to termites than other areas.'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Areas */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'نخدم جميع أحياء الكورنيش' : 'We Serve All Corniche Districts'}
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4">
+              <Link href={`/${locale}/jeddah/obhur-north`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-cyan-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'أبحر الشمالية' : 'Obhur North'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-cyan-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-marjan`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-cyan-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'المرجان' : 'Al-Marjan'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-white p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-cyan-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
