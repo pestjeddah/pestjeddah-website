@@ -15,7 +15,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -309,16 +308,64 @@ export default function AlHamdaniyaPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة الحشرات في الحمدانية' : 'Pest Control in Al-Hamdaniya',
-          description: isArabic 
-            ? 'خدمة مكافحة حشرات متخصصة في حي الحمدانية بجدة'
-            : 'Specialized pest control service in Al-Hamdaniya district, Jeddah',
-          serviceType: isArabic ? 'مكافحة الحشرات' : 'Pest Control'
-        }}
-      />
+      {/* About Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'عن حي الحمدانية' : 'About Al-Hamdaniya'}
+            </h2>
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {isArabic 
+                  ? 'حي الحمدانية من الأحياء الشهيرة في شمال جدة، يتميز بموقعه الحيوي وقربه من المرافق الحكومية. يضم الحي مزيجاً من المساكن والمحلات والمكاتب.'
+                  : 'Al-Hamdaniya is one of famous districts in north Jeddah, distinguished by vital location and proximity to government facilities. The district includes mix of housing, shops and offices.'
+                }
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-6">
+                <Link href={`/${locale}/services/cockroach-control-jeddah`} className="bg-primary/5 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'مكافحة الصراصير' : 'Cockroach Control'}</h4>
+                </Link>
+                <Link href={`/${locale}/services/rodents-control-jeddah`} className="bg-primary/5 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'مكافحة القوارض' : 'Rodent Control'}</h4>
+                </Link>
+                <Link href={`/${locale}/services/annual-contracts`} className="bg-primary/5 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'عقود سنوية' : 'Annual Contracts'}</h4>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Areas */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'نخدم المناطق المجاورة' : 'We Serve Nearby Areas'}
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4">
+              <Link href={`/${locale}/jeddah/al-bawadi`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'البوادي' : 'Al-Bawadi'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-rawdah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الروضة' : 'Al-Rawdah'}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

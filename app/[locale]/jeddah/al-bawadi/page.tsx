@@ -15,7 +15,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -344,16 +343,199 @@ export default function AlBawadiPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة الحشرات في البوادي' : 'Pest Control in Al-Bawadi',
-          description: isArabic 
-            ? 'خدمة مكافحة حشرات متخصصة في حي البوادي بجدة'
-            : 'Specialized pest control service in Al-Bawadi district, Jeddah',
-          serviceType: isArabic ? 'مكافحة الحشرات' : 'Pest Control'
-        }}
-      />
+      {/* About Al-Bawadi */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+              {isArabic ? 'حي البوادي: منطقة حيوية' : 'Al-Bawadi: Vibrant Area'}
+            </h2>
+
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'عن حي البوادي' : 'About Al-Bawadi District'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isArabic 
+                    ? 'حي البوادي من الأحياء السكنية الكبيرة في جدة، يتميز بموقعه الاستراتيجي والكثافة السكانية المتوسطة. يضم الحي مزيجاً من المساكن الشعبية والحديثة، مع توفر الخدمات الأساسية والمحلات التجارية.'
+                    : 'Al-Bawadi is one of large residential districts in Jeddah, distinguished by strategic location and medium population density. The district includes mix of popular and modern housing, with availability of basic services and commercial shops.'
+                  }
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {isArabic 
+                    ? 'المنازل والشقق في البوادي تحتاج لبرامج مكافحة حشرات منتظمة. نقدم خدمات سريعة متوفرة على مدار الساعة مع ضمان يصل إلى 6 أشهر.'
+                    : 'Houses and apartments in Al-Bawadi need regular pest control programs. We provide fast services available 24/7 with guarantee up to 6 months.'
+                  }
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isArabic ? 'مشاكل الحشرات الشائعة' : 'Common Insect Problems'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'الصراصير في المطابخ والحمامات' : 'Cockroaches in kitchens and bathrooms'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'النمل الأسود في المنازل' : 'Black ants in homes'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'القوارض في الأدوار الأرضية' : 'Rodents on ground floors'}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{isArabic ? 'بق الفراش في الشقق القديمة' : 'Bed bugs in old apartments'}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-primary/10 to-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {isArabic ? 'خدماتنا في حي البوادي' : 'Our Services in Al-Bawadi'}
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Link href={`/${locale}/services/cockroach-control-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'مكافحة الصراصير' : 'Cockroach Control'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'حلول فعالة للمطابخ والحمامات' : 'Effective solutions for kitchens and bathrooms'}</p>
+                </Link>
+                <Link href={`/${locale}/services/rodents-control-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'مكافحة القوارض' : 'Rodent Control'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'إبادة آمنة للفئران والجرذان' : 'Safe elimination of mice and rats'}</p>
+                </Link>
+                <Link href={`/${locale}/services/bed-bugs-treatment-jeddah`} className="bg-white p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900 mb-2">{isArabic ? 'علاج بق الفراش' : 'Bed Bug Treatment'}</h4>
+                  <p className="text-sm text-gray-600">{isArabic ? 'معالجة شاملة مع ضمان' : 'Comprehensive treatment with guarantee'}</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'لماذا نحن الخيار الأفضل في البوادي؟' : 'Why Are We the Best Choice in Al-Bawadi?'}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-primary/5 p-6 rounded-lg">
+                <Clock className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'خدمة سريعة 24/7' : 'Fast Service 24/7'}</h3>
+                <p className="text-gray-700">{isArabic ? 'نستجيب لطلباتك في البوادي خلال ساعات قليلة، مع فريق متاح على مدار الساعة' : 'We respond to your requests in Al-Bawadi within few hours, with team available 24/7'}</p>
+              </div>
+              <div className="bg-primary/5 p-6 rounded-lg">
+                <ShieldCheck className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'مواد آمنة معتمدة' : 'Safe Certified Materials'}</h3>
+                <p className="text-gray-700">{isArabic ? 'نستخدم مبيدات مرخصة من وزارة الصحة، آمنة للأطفال والحيوانات الأليفة' : 'We use pesticides licensed by Ministry of Health, safe for children and pets'}</p>
+              </div>
+              <div className="bg-primary/5 p-6 rounded-lg">
+                <Star className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'ضمان 6 أشهر' : '6 Months Guarantee'}</h3>
+                <p className="text-gray-700">{isArabic ? 'نضمن نتائج خدماتنا لمدة 6 أشهر، مع إعادة المعالجة مجاناً عند الحاجة' : 'We guarantee our service results for 6 months, with free re-treatment when needed'}</p>
+              </div>
+              <div className="bg-primary/5 p-6 rounded-lg">
+                <Home className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-gray-900 mb-3">{isArabic ? 'أسعار تنافسية' : 'Competitive Prices'}</h3>
+                <p className="text-gray-700">{isArabic ? 'عروض خاصة لسكان البوادي مع خصومات على العقود السنوية' : 'Special offers for Al-Bawadi residents with discounts on annual contracts'}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Process */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'كيف نعمل في حي البوادي' : 'How We Work in Al-Bawadi'}
+            </h2>
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {isArabic ? 'الاتصال والفحص' : 'Contact & Inspection'}
+                    </h3>
+                    <p className="text-gray-700">
+                      {isArabic 
+                        ? 'اتصل بنا عبر الهاتف أو واتساب، سنرسل فريق الفحص خلال ساعات لتحديد نوع الآفة ومستوى الإصابة في منزلك بالبوادي.'
+                        : 'Contact us via phone or WhatsApp, we will send inspection team within hours to identify pest type and infestation level in your home in Al-Bawadi.'
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {isArabic ? 'خطة العلاج' : 'Treatment Plan'}
+                    </h3>
+                    <p className="text-gray-700">
+                      {isArabic 
+                        ? 'نضع خطة علاج مخصصة تناسب حالتك، مع تحديد المواد المستخدمة والمدة الزمنية، وعرض سعر شفاف بدون تكاليف خفية.'
+                        : 'We develop customized treatment plan suitable for your case, specifying materials used and time duration, with transparent price quote without hidden costs.'
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {isArabic ? 'التنفيذ والضمان' : 'Implementation & Guarantee'}
+                    </h3>
+                    <p className="text-gray-700">
+                      {isArabic 
+                        ? 'ننفذ المعالجة باستخدام أحدث التقنيات والمواد الآمنة، ونقدم ضمان 6 أشهر مع متابعة دورية للتأكد من القضاء التام على الآفات.'
+                        : 'We implement treatment using latest techniques and safe materials, providing 6 months guarantee with periodic follow-up to ensure complete pest elimination.'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Areas */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {isArabic ? 'نخدم أيضاً المناطق المجاورة' : 'We Also Serve Nearby Areas'}
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4">
+              <Link href={`/${locale}/jeddah/al-hamdaniya`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمدانية' : 'Al-Hamdaniya'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-rawdah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الروضة' : 'Al-Rawdah'}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

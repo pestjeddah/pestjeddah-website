@@ -16,7 +16,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -250,16 +249,26 @@ export default function AlNaeemPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة الحشرات VIP في النعيم' : 'VIP Pest Control in Al-Naeem',
-          description: isArabic 
-            ? 'خدمة راقية لمكافحة الحشرات في حي النعيم بجدة'
-            : 'Premium pest control service in Al-Naeem district, Jeddah',
-          serviceType: isArabic ? 'مكافحة الحشرات' : 'Pest Control'
-        }}
-      />
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">{isArabic ? 'خدماتنا الراقية في النعيم' : 'Our Premium Services in Al-Naeem'}</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link href={`/${locale}/services/annual-contracts`} className="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900">{isArabic ? 'عقود VIP' : 'VIP Contracts'}</h4>
+                </Link>
+                <Link href={`/${locale}/services/termites-control-jeddah`} className="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900">{isArabic ? 'حماية فاخرة' : 'Premium Protection'}</h4>
+                </Link>
+                <Link href={`/${locale}/sectors/residential`} className="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900">{isArabic ? 'برامج خاصة' : 'Special Programs'}</h4>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

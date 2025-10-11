@@ -15,7 +15,6 @@ import {
 
 import { siteConfig } from '@/app/config/site';
 import { createWhatsAppLink } from '@/lib/utils';
-import { SchemaInjector } from '@/components/seo/SchemaInjector';
 
 type Props = {
   params: { locale: string };
@@ -324,16 +323,45 @@ export default function AlMurjanPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <SchemaInjector 
-        type="service" 
-        data={{
-          title: isArabic ? 'مكافحة الحشرات في المرجان' : 'Pest Control in Al-Murjan',
-          description: isArabic 
-            ? 'خدمة طوارئ لمكافحة الحشرات في حي المرجان بجدة'
-            : 'Emergency pest control service in Al-Murjan district, Jeddah',
-          serviceType: isArabic ? 'مكافحة الحشرات' : 'Pest Control'
-        }}
-      />
+      {/* Expanded Content */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{isArabic ? 'خدماتنا المتخصصة' : 'Our Specialized Services'}</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link href={`/${locale}/services/cockroach-control-jeddah`} className="bg-red-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900">{isArabic ? 'طوارئ الصراصير' : 'Cockroach Emergency'}</h4>
+                </Link>
+                <Link href={`/${locale}/services/bed-bugs-treatment-jeddah`} className="bg-red-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900">{isArabic ? 'طوارئ بق الفراش' : 'Bed Bug Emergency'}</h4>
+                </Link>
+                <Link href={`/${locale}/services/rodents-control-jeddah`} className="bg-red-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-gray-900">{isArabic ? 'طوارئ القوارض' : 'Rodent Emergency'}</h4>
+                </Link>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-4 gap-4">
+              <Link href={`/${locale}/jeddah/al-marjan`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-red-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'المرجان' : 'Al-Marjan'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/obhur-north`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-red-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'أبحر الشمالية' : 'Obhur North'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-hamra`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-red-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'الحمراء' : 'Al-Hamra'}</span>
+              </Link>
+              <Link href={`/${locale}/jeddah/al-salamah`} className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow text-center border">
+                <MapPin className="w-8 h-8 text-red-600 mx-auto mb-2" />
+                <span className="text-gray-900 font-medium">{isArabic ? 'السلامة' : 'Al-Salamah'}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
